@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ติดต่อ Dive Feels | สอบถามคอร์สดำน้ำ กรุงเทพ</title>
+  <meta name="description" content="ติดต่อ Dive Feels ผ่าน LINE, Facebook หรือ Instagram สอบถามคอร์สดำน้ำ ราคา และตาราง ทีมงานยินดีตอบทุกคำถาม">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--color-navy-deep:#1C2B3A;--color-navy-ocean:#2E4A6A;--color-teal:#5BA8B8;--color-red:#E31837;--color-bg:#FFF6F0;--color-white:#FFFFFF;--color-surface:#F5EDE8;--color-border:#E8DDD8;--color-text-primary:#1C2B3A;--color-text-body:#3D4F5C;--color-text-muted:#7A8C99;--color-teal-tint-1:#EAF5F7;--font-heading:'Prompt',system-ui,sans-serif;--font-body:'Sarabun',system-ui,sans-serif;--shadow-sm:0 1px 3px rgba(28,43,58,.08);--shadow-md:0 4px 12px rgba(28,43,58,.10);--shadow-lg:0 8px 24px rgba(28,43,58,.12);--radius-md:8px;--radius-lg:12px;--radius-full:9999px;--transition-base:250ms ease;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);font-size:1rem;line-height:1.7;color:var(--color-text-body);background:var(--color-bg);}
+    a{color:var(--color-teal);text-decoration:none;}
+    h1,h2,h3,h4{font-family:var(--font-heading);color:var(--color-text-primary);line-height:1.3;}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+    nav{position:sticky;top:0;z-index:100;background:var(--color-navy-deep);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.2);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:36px;}
+    .nav-logo-text{font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:#fff;}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links a{color:rgba(255,255,255,.8);font-size:.9rem;font-family:var(--font-heading);}
+    .nav-links a:hover{color:var(--color-teal);}
+    .nav-cta{background:var(--color-red);color:#fff !important;padding:8px 18px;border-radius:var(--radius-full);font-weight:600 !important;}
+    @media(max-width:768px){.nav-links{display:none;}}
+    .page-hero{background:linear-gradient(135deg,var(--color-navy-deep),var(--color-navy-ocean));color:#fff;padding:72px 24px;text-align:center;}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:14px;}
+    .page-hero p{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:540px;margin:0 auto;}
+    .section{padding:72px 0;}
+    .section-alt{background:var(--color-surface);}
+    .section-label{display:inline-block;font-size:.75rem;font-weight:700;font-family:var(--font-heading);letter-spacing:.1em;text-transform:uppercase;color:var(--color-teal);margin-bottom:10px;}
+    .section-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:20px;}
+
+    /* CONTACT CHANNELS */
+    .channels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .channel-card{background:var(--color-white);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow-sm);text-align:center;transition:transform var(--transition-base),box-shadow var(--transition-base);}
+    .channel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+    .channel-icon{font-size:2.5rem;margin-bottom:14px;}
+    .channel-card h3{font-size:1.05rem;font-weight:700;margin-bottom:6px;}
+    .channel-card p{font-size:.875rem;color:var(--color-text-muted);margin-bottom:20px;line-height:1.6;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:var(--radius-full);font-family:var(--font-heading);font-weight:600;font-size:.9rem;cursor:pointer;border:none;transition:all var(--transition-base);text-decoration:none;justify-content:center;width:100%;}
+    .btn-green{background:#06C755;color:#fff;}
+    .btn-green:hover{background:#05A846;transform:translateY(-1px);}
+    .btn-blue{background:#1877F2;color:#fff;}
+    .btn-blue:hover{background:#1567D3;transform:translateY(-1px);}
+    .btn-gradient-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;}
+    .btn-gradient-ig:hover{opacity:.9;transform:translateY(-1px);}
+    .btn-teal{background:var(--color-teal);color:#fff;}
+    .btn-teal:hover{background:#4A97A8;transform:translateY(-1px);}
+    .btn-red{background:var(--color-red);color:#fff;}
+    .btn-red:hover{background:#C4142E;}
+
+    /* FORM */
+    .contact-grid{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:flex-start;}
+    @media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+    .form-card{background:var(--color-white);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-md);}
+    .form-card h3{font-size:1.2rem;font-weight:700;margin-bottom:20px;}
+    .form-group{margin-bottom:20px;}
+    .form-group label{display:block;font-size:.875rem;font-weight:600;color:var(--color-text-primary);margin-bottom:6px;font-family:var(--font-heading);}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1.5px solid var(--color-border);border-radius:var(--radius-md);font-family:var(--font-body);font-size:.95rem;color:var(--color-text-primary);background:var(--color-bg);transition:border-color var(--transition-base);}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--color-teal);}
+    .form-group textarea{resize:vertical;min-height:110px;}
+    .form-note{font-size:.8rem;color:var(--color-text-muted);margin-top:12px;}
+    .form-submit{width:100%;padding:15px;background:var(--color-red);color:#fff;border:none;border-radius:var(--radius-full);font-family:var(--font-heading);font-size:1rem;font-weight:700;cursor:pointer;transition:background var(--transition-base);}
+    .form-submit:hover{background:#C4142E;}
+    .info-block{display:flex;flex-direction:column;gap:24px;}
+    .info-item{display:flex;gap:16px;align-items:flex-start;}
+    .info-icon{width:44px;height:44px;border-radius:var(--radius-md);background:var(--color-teal-tint-1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+    .info-text h4{font-size:.95rem;font-weight:700;margin-bottom:4px;}
+    .info-text p,.info-text a{font-size:.875rem;color:var(--color-text-muted);line-height:1.6;}
+
+    /* MAP */
+    .map-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    @media(max-width:768px){.map-grid{grid-template-columns:1fr;}}
+    .map-card{background:var(--color-white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);}
+    .map-placeholder{height:220px;background:linear-gradient(135deg,var(--color-teal-tint-1),#C5E5EC);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:var(--color-navy-ocean);}
+    .map-placeholder .map-icon{font-size:2.5rem;}
+    .map-placeholder p{font-size:.85rem;font-weight:600;}
+    .map-body{padding:20px;}
+    .map-body h3{font-size:1rem;font-weight:700;margin-bottom:6px;}
+    .map-body p{font-size:.875rem;color:var(--color-text-muted);line-height:1.6;}
+    footer{background:var(--color-navy-deep);color:rgba(255,255,255,.6);padding:40px 24px;text-align:center;font-size:.85rem;}
+    footer a{color:var(--color-teal);}
+    .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:16px;flex-wrap:wrap;}
+    .sticky-line-btn{position:fixed;bottom:24px;right:24px;z-index:200;background:#06C755;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(6,199,85,.4);text-decoration:none;transition:transform var(--transition-base);}
+    .sticky-line-btn:hover{transform:scale(1.1);}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="assets/images/logo.png" alt="Dive Feels" onerror="this.style.display='none'">
+    <span class="nav-logo-text">Dive Feels</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#courses">คอร์สดำน้ำ</a></li>
+    <li><a href="index.html#destinations">จุดดำน้ำ</a></li>
+    <li><a href="index.html#trips">ทริป</a></li>
+    <li><a href="about.html">เกี่ยวกับเรา</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="https://lin.ee/8X48Hij" class="nav-cta" target="_blank" rel="noopener">💬 LINE สอบถาม</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <h1>ติดต่อ Dive Feels</h1>
+  <p>มีคำถามไหน? ทักหาเราได้เลย ทีมงานพร้อมตอบทุกคำถามเกี่ยวกับคอร์ส ตาราง และทริป</p>
+</div>
+
+<!-- CHANNELS -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">ช่องทางติดต่อ</span>
+    <h2 class="section-title">ติดต่อเราได้หลายช่องทาง</h2>
+    <div class="channels-grid">
+      <div class="channel-card">
+        <div class="channel-icon">💚</div>
+        <h3>LINE OA</h3>
+        <p>ช่องทางหลัก ตอบเร็วที่สุด เหมาะสำหรับสอบถามรายละเอียดคอร์สและตาราง</p>
+        <a href="https://lin.ee/8X48Hij" class="btn btn-green" target="_blank" rel="noopener">เพิ่มเพื่อน LINE</a>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">📘</div>
+        <h3>Facebook</h3>
+        <p>ติดตามข่าวสาร ทริป และกิจกรรมล่าสุด ส่ง Message ได้โดยตรง</p>
+        <a href="https://www.facebook.com/divefeels" class="btn btn-blue" target="_blank" rel="noopener">Facebook Page</a>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">📸</div>
+        <h3>Instagram</h3>
+        <p>ดูภาพสวยๆ จากทริปดำน้ำ เบื้องหลัง และ Reel ใต้น้ำของเรา</p>
+        <a href="https://www.instagram.com/divefeels" class="btn btn-gradient-ig" target="_blank" rel="noopener">@divefeels</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM + INFO -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Form -->
+      <div class="form-card">
+        <h3>ส่งข้อความหาเรา</h3>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label>ชื่อ-นามสกุล *</label>
+            <input type="text" placeholder="ชื่อของคุณ" required>
+          </div>
+          <div class="form-group">
+            <label>เบอร์โทรศัพท์ *</label>
+            <input type="tel" placeholder="08X-XXX-XXXX" required>
+          </div>
+          <div class="form-group">
+            <label>LINE ID (ถ้ามี)</label>
+            <input type="text" placeholder="@your_line_id">
+          </div>
+          <div class="form-group">
+            <label>สนใจเรื่องไหน? *</label>
+            <select required>
+              <option value="">-- เลือกหัวข้อ --</option>
+              <option>คอร์ส Open Water Diver</option>
+              <option>คอร์ส Advanced Open Water</option>
+              <option>คอร์ส Nitrox / EANx</option>
+              <option>ทริป Liveaboard</option>
+              <option>กิจกรรม Ocean Cleanup</option>
+              <option>อื่นๆ</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>ข้อความ / คำถาม</label>
+            <textarea placeholder="บอกเราได้เลย มีประสบการณ์ดำน้ำก่อนหรือเปล่า? สะดวกช่วงไหน?"></textarea>
+          </div>
+          <button type="submit" class="form-submit">📨 ส่งข้อความ</button>
+          <p class="form-note">* ข้อมูลของคุณจะถูกเก็บเป็นความลับตาม PDPA ใช้เพื่อติดต่อกลับเท่านั้น</p>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="info-block">
+        <div class="info-item">
+          <div class="info-icon">⏰</div>
+          <div class="info-text">
+            <h4>เวลาทำการ</h4>
+            <p>จันทร์ – ศุกร์: 10:00 – 20:00 น.<br>เสาร์ – อาทิตย์: 09:00 – 18:00 น.</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">💬</div>
+          <div class="info-text">
+            <h4>ตอบกลับเร็วแค่ไหน?</h4>
+            <p>LINE ตอบภายใน 1–2 ชั่วโมง (ในเวลาทำการ)<br>Facebook ตอบภายในวันเดียวกัน</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🏙️</div>
+          <div class="info-text">
+            <h4>สระฝึก — กรุงเทพ</h4>
+            <p>สถานที่ฝึกในสระ กรุงเทพมหานคร<br>📍 <a href="https://lin.ee/8X48Hij" target="_blank">ติดต่อสอบถามสถานที่ผ่าน LINE</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🌊</div>
+          <div class="info-text">
+            <h4>Checkout Dives — พัทยา</h4>
+            <p>Dive site ใน จ.ชลบุรี ห่างจากกรุงเทพ ~2 ชั่วโมง<br>📍 พัทยา / เกาะล้าน / เกาะสีชัง</p>
+          </div>
+        </div>
+        <div style="background:var(--color-white);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);">
+          <h4 style="margin-bottom:14px;font-size:1rem;">คำถามที่พบบ่อย</h4>
+          <p style="font-size:.875rem;color:var(--color-text-muted);margin-bottom:14px;">ก่อนติดต่อ ลองดู FAQ ของเราก่อน อาจเจอคำตอบที่ต้องการได้เลย</p>
+          <a href="faq.html" class="btn btn-teal" style="width:auto;padding:10px 22px;font-size:.875rem;">ดู FAQ →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS MAP -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">ที่ตั้ง</span>
+    <h2 class="section-title">เราอยู่ที่ไหน?</h2>
+    <div class="map-grid">
+      <div class="map-card">
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <p>แผนที่ กรุงเทพ — สระฝึก</p>
+        </div>
+        <div class="map-body">
+          <h3>🏙️ กรุงเทพ — สระฝึกและเรียนทฤษฎี</h3>
+          <p>ฝึกทักษะในสระ + เรียนทฤษฎีในกรุงเทพ สถานที่ยืดหยุ่นตามตาราง
+          ติดต่อสอบถามผ่าน LINE เพื่อนัดหมาย</p>
+          <a href="https://lin.ee/8X48Hij" target="_blank" rel="noopener" style="color:var(--color-teal);font-size:.875rem;font-weight:600;">💬 นัดหมายผ่าน LINE →</a>
+        </div>
+      </div>
+      <div class="map-card">
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <p>แผนที่ พัทยา — Checkout Dives</p>
+        </div>
+        <div class="map-body">
+          <h3>🌊 พัทยา — Checkout Dives</h3>
+          <p>Checkout dives จริงในทะเลพัทยา ห่างจากกรุงเทพประมาณ 2 ชั่วโมง
+          จุดดำน้ำ: พัทยา เกาะล้าน เกาะสีชัง</p>
+          <a href="https://lin.ee/8X48Hij" target="_blank" rel="noopener" style="color:var(--color-teal);font-size:.875rem;font-weight:600;">💬 สอบถามตารางพัทยา →</a>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:.85rem;color:var(--color-text-muted);">* Google Maps embed จะถูกเพิ่มเมื่อมีที่อยู่ชัดเจน</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">หน้าแรก</a>
+    <a href="about.html">เกี่ยวกับเรา</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">ติดต่อ</a>
+    <a href="https://www.facebook.com/divefeels" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/divefeels" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <p>© 2025 Dive Feels · SSI Certified Dive School · Bangkok & Pattaya, Thailand</p>
+</footer>
+<a href="https://lin.ee/8X48Hij" class="sticky-line-btn" target="_blank" rel="noopener" aria-label="LINE">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+</a>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  alert('ขอบคุณที่ส่งข้อความมา! ทีมงาน Dive Feels จะติดต่อกลับโดยเร็ว หรือทักหาเราผ่าน LINE ได้เลยที่ lin.ee/8X48Hij');
+}
+</script>
+</body>
+</html>

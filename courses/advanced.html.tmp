@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>คอร์สดำน้ำ Advanced Open Water Diver กรุงเทพ | Dive Feels SSI</title>
+  <meta name="description" content="เรียน Advanced Open Water Diver ในกรุงเทพ ฝึกสระ จบ cert ที่พัทยา ไม่ต้องออกเกาะ ตารางยืดหยุ่น SSI Certified สอบถาม LINE ได้เลย">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-navy-deep:    #1C2B3A;
+      --color-navy-ocean:   #2E4A6A;
+      --color-teal:         #5BA8B8;
+      --color-red:          #E31837;
+      --color-coral:        #FF9B7A;
+      --color-bg:           #FFF6F0;
+      --color-white:        #FFFFFF;
+      --color-surface:      #F5EDE8;
+      --color-border:       #E8DDD8;
+      --color-text-primary: #1C2B3A;
+      --color-text-body:    #3D4F5C;
+      --color-text-muted:   #7A8C99;
+      --color-teal-tint-1:  #EAF5F7;
+      --font-heading: 'Prompt', system-ui, sans-serif;
+      --font-body:    'Sarabun', system-ui, sans-serif;
+      --shadow-sm: 0 1px 3px rgba(28,43,58,.08);
+      --shadow-md: 0 4px 12px rgba(28,43,58,.10);
+      --shadow-lg: 0 8px 24px rgba(28,43,58,.12);
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-full: 9999px;
+      --transition-base: 250ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 1rem; line-height: 1.7; color: var(--color-text-body); background: var(--color-bg); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--color-teal); text-decoration: none; }
+    h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--color-text-primary); line-height: 1.3; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--color-navy-deep);
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 36px; }
+    .nav-logo-text { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.8); font-size: .9rem; font-family: var(--font-heading); transition: color var(--transition-base); }
+    .nav-links a:hover { color: var(--color-teal); }
+    .nav-cta { background: var(--color-red); color: #fff !important; padding: 8px 18px; border-radius: var(--radius-full); font-weight: 600 !important; }
+    .nav-cta:hover { background: #C4142E; color: #fff !important; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      background: var(--color-surface);
+      padding: 12px 0;
+      font-size: .85rem;
+      color: var(--color-text-muted);
+    }
+    .breadcrumb a { color: var(--color-teal); }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* HERO */
+    .course-hero {
+      background: linear-gradient(135deg, var(--color-navy-deep) 0%, var(--color-navy-ocean) 100%);
+      color: #fff;
+      padding: 64px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .course-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('../assets/images/diver-silhouette.jpg') center/cover no-repeat;
+      opacity: .18;
+    }
+    .course-hero-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: center;
+    }
+    .course-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(91,168,184,.25); color: var(--color-teal);
+      font-size: .75rem; font-weight: 700; font-family: var(--font-heading);
+      letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 14px; border-radius: var(--radius-full);
+      border: 1px solid rgba(91,168,184,.4);
+      margin-bottom: 16px;
+    }
+    .course-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 16px; }
+    .course-hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.8); margin-bottom: 28px; line-height: 1.8; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 32px; }
+    .hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: .9rem; color: rgba(255,255,255,.85); }
+    .hero-meta-item strong { color: #fff; }
+    .hero-cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-full); font-family: var(--font-heading); font-weight: 600; font-size: .95rem; cursor: pointer; border: none; transition: all var(--transition-base); text-decoration: none; }
+    .btn-red { background: var(--color-red); color: #fff; }
+    .btn-red:hover { background: #C4142E; transform: translateY(-1px); }
+    .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.4); }
+    .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+    .btn-teal { background: var(--color-teal); color: #fff; }
+    .btn-teal:hover { background: #4A97A8; transform: translateY(-1px); }
+
+    /* COURSE CARD (sticky sidebar) */
+    .course-card-sticky {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .course-card-img {
+      height: 180px;
+      background: url('../assets/images/pool-training.jpg') center/cover no-repeat;
+    }
+    .course-card-body { padding: 24px; }
+    .price-label { font-size: .8rem; color: var(--color-text-muted); margin-bottom: 4px; }
+    .price-value { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--color-navy-deep); margin-bottom: 4px; }
+    .price-note { font-size: .8rem; color: var(--color-text-muted); margin-bottom: 20px; }
+    .course-card-meta { border-top: 1px solid var(--color-border); padding-top: 16px; margin-top: 4px; display: flex; flex-direction: column; gap: 10px; }
+    .course-card-meta-row { display: flex; justify-content: space-between; font-size: .875rem; }
+    .course-card-meta-row span:first-child { color: var(--color-text-muted); }
+    .course-card-meta-row strong { color: var(--color-text-primary); font-weight: 600; }
+    @media (max-width: 900px) {
+      .course-hero-inner { grid-template-columns: 1fr; }
+      .course-card-sticky { max-width: 400px; }
+    }
+
+    /* CONTENT SECTIONS */
+    .section { padding: 64px 0; }
+    .section-alt { background: var(--color-surface); }
+    .section-label {
+      display: inline-block;
+      font-size: .75rem; font-weight: 700; font-family: var(--font-heading);
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--color-teal); margin-bottom: 10px;
+    }
+    .section-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 16px; }
+    .section-intro { color: var(--color-text-muted); font-size: 1.05rem; max-width: 620px; line-height: 1.8; margin-bottom: 36px; }
+
+    /* INCLUDES GRID */
+    .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .include-item {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex; gap: 14px; align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+    }
+    .include-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .include-text h4 { font-size: .95rem; font-weight: 600; margin-bottom: 4px; }
+    .include-text p { font-size: .85rem; color: var(--color-text-muted); line-height: 1.5; }
+
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: grid; grid-template-columns: 56px 1fr; gap: 24px;
+      padding: 28px 0; border-bottom: 1px solid var(--color-border);
+      align-items: flex-start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--color-navy-ocean); color: #fff;
+      font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .step-content h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+    .step-content p { color: var(--color-text-muted); font-size: .9rem; line-height: 1.7; }
+    .step-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: var(--color-teal-tint-1); color: var(--color-navy-ocean);
+      font-size: .72rem; font-weight: 700; font-family: var(--font-heading);
+      padding: 2px 10px; border-radius: var(--radius-full);
+      margin-bottom: 6px;
+    }
+
+    /* SKILLS TABLE */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
+    .skill-item {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--color-white); padding: 14px 18px;
+      border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
+      font-size: .9rem;
+    }
+    .skill-item::before { content: '✓'; color: var(--color-teal); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+
+    /* FAQ MINI */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; text-align: left;
+      padding: 18px 22px;
+      font-family: var(--font-heading); font-size: .95rem; font-weight: 600;
+      background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      color: var(--color-text-primary);
+    }
+    .faq-q .arrow { transition: transform var(--transition-base); font-size: .8rem; color: var(--color-text-muted); }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 22px 18px; font-size: .9rem; color: var(--color-text-muted); line-height: 1.7; border-top: 1px solid var(--color-border); padding-top: 14px; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--color-navy-deep), var(--color-navy-ocean));
+      color: #fff; text-align: center; padding: 64px 24px;
+    }
+    .cta-banner h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 12px; }
+    .cta-banner p { color: rgba(255,255,255,.75); margin-bottom: 32px; font-size: 1.05rem; }
+    .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer {
+      background: var(--color-navy-deep);
+      color: rgba(255,255,255,.6);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: .85rem;
+    }
+    footer a { color: var(--color-teal); }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+
+    /* STICKY LINE BTN */
+    .sticky-line-btn {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+      background: #06C755; color: #fff;
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(6,199,85,.4);
+      font-size: 1.5rem; text-decoration: none;
+      transition: transform var(--transition-base);
+    }
+    .sticky-line-btn:hover { transform: scale(1.1); }
+
+    /* RELATED COURSES */
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .related-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+      text-decoration: none; color: inherit;
+      display: block;
+    }
+    .related-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .related-card-img { height: 140px; background-size: cover; background-position: center; }
+    .related-card-body { padding: 18px; }
+    .related-card-body h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .related-card-body p { font-size: .85rem; color: var(--color-text-muted); }
+  </style>
+
+  <!-- FAQPage + Course Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Open Water Diver — SSI",
+    "description": "คอร์สดำน้ำเปิดตัว Open Water Diver มาตรฐาน SSI เรียนในกรุงเทพ ฝึกสระ จบ cert ที่พัทยา",
+    "provider": {
+      "@type": "Organization",
+      "name": "Dive Feels",
+      "url": "https://kongbhopr.github.io/divefeelsweb/"
+    },
+    "educationalLevel": "Beginner",
+    "courseMode": "blended",
+    "locationCreated": {
+      "@type": "Place",
+      "name": "Bangkok & Pattaya, Thailand"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <img src="../assets/images/logo.png" alt="Dive Feels" onerror="this.style.display='none'">
+    <span class="nav-logo-text">Dive Feels</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#courses">คอร์สทั้งหมด</a></li>
+    <li><a href="../index.html#destinations">จุดดำน้ำ</a></li>
+    <li><a href="../index.html#trips">ทริป</a></li>
+    <li><a href="../about.html">เกี่ยวกับเรา</a></li>
+    <li><a href="../faq.html">FAQ</a></li>
+    <li><a href="https://lin.ee/8X48Hij" class="nav-cta" target="_blank" rel="noopener">💬 LINE สอบถาม</a></li>
+  </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index.html">หน้าแรก</a>
+    <span>›</span>
+    <a href="../index.html#courses">คอร์สดำน้ำ</a>
+    <span>›</span>
+    Open Water Diver
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="course-hero">
+  <div class="container">
+    <div class="course-hero-inner">
+      <div>
+        <div class="course-badge">🎓 SSI Certified · Beginner</div>
+        <h1>Open Water Diver<br>เริ่มต้นดำน้ำได้เลย — ในกรุงเทพ</h1>
+        <p class="course-hero-sub">
+          เรียนทฤษฎีและฝึกในสระที่กรุงเทพ ใช้แค่ 1 สุดสัปดาห์ที่พัทยาสำหรับ checkout dives
+          ได้ใบรับรอง SSI Open Water Diver ที่ใช้ได้ทั่วโลก ดำได้ลึกถึง 18 เมตร
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">⏱ <strong>3–4 วัน</strong> (ยืดหยุ่นตามตาราง)</div>
+          <div class="hero-meta-item">📍 <strong>กรุงเทพ</strong> + พัทยา</div>
+          <div class="hero-meta-item">🌊 <strong>ลึกสุด 18 ม.</strong></div>
+          <div class="hero-meta-item">✅ <strong>ไม่ต้องออกเกาะ</strong></div>
+        </div>
+        <div class="hero-cta-group">
+          <a href="https://lin.ee/8X48Hij" class="btn btn-red" target="_blank" rel="noopener">💬 สอบถามผ่าน LINE</a>
+          <a href="#curriculum" class="btn btn-outline-white">ดูหลักสูตร ↓</a>
+        </div>
+      </div>
+
+      <!-- Sticky price card -->
+      <div class="course-card-sticky">
+        <div class="course-card-img"></div>
+        <div class="course-card-body">
+          <div class="price-label">ราคาคอร์ส</div>
+          <div class="price-value">ติดต่อสอบถาม</div>
+          <div class="price-note">พร้อมอุปกรณ์ครบชุด · มาตรฐาน SSI</div>
+          <a href="https://lin.ee/8X48Hij" class="btn btn-red" style="width:100%;justify-content:center;margin-bottom:10px;" target="_blank" rel="noopener">💬 LINE สอบถามราคา</a>
+          <a href="https://www.facebook.com/divefeels" class="btn btn-outline-white" style="width:100%;justify-content:center;border-color:var(--color-border);color:var(--color-text-primary);" target="_blank" rel="noopener">📘 Facebook</a>
+          <div class="course-card-meta">
+            <div class="course-card-meta-row"><span>ระดับ</span><strong>Beginner (ไม่มีประสบการณ์)</strong></div>
+            <div class="course-card-meta-row"><span>อายุขั้นต่ำ</span><strong>10 ปีขึ้นไป</strong></div>
+            <div class="course-card-meta-row"><span>เรียน Theory</span><strong>กรุงเทพ / ออนไลน์</strong></div>
+            <div class="course-card-meta-row"><span>Checkout Dives</span><strong>พัทยา (4 dives)</strong></div>
+            <div class="course-card-meta-row"><span>ใบเซอร์</span><strong>SSI Open Water Diver</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU LEARN -->
+<section class="section" id="curriculum">
+  <div class="container">
+    <span class="section-label">หลักสูตร</span>
+    <h2 class="section-title">คุณจะได้เรียนอะไรบ้าง?</h2>
+    <p class="section-intro">
+      หลักสูตร Open Water Diver ของ SSI ครอบคลุมทั้งทฤษฎี ทักษะในสระ และ checkout dives จริงในทะเล
+      สอนโดยครูที่มีใบ SSI Instructor พร้อมดูแลทุกขั้นตอน
+    </p>
+    <div class="skills-grid">
+      <div class="skill-item">ทฤษฎีดำน้ำและฟิสิกส์ใต้น้ำ</div>
+      <div class="skill-item">การใช้อุปกรณ์ดำน้ำ (BCD, Regulator, Tank)</div>
+      <div class="skill-item">Buoyancy Control — ลอยตัวนิ่ง</div>
+      <div class="skill-item">การหายใจใต้น้ำอย่างถูกต้อง</div>
+      <div class="skill-item">Buddy system และการดูแลซึ่งกันและกัน</div>
+      <div class="skill-item">การวางแผนดำน้ำ — Dive Tables / Dive Computer</div>
+      <div class="skill-item">ทักษะฉุกเฉินและการช่วยเหลือเบื้องต้น</div>
+      <div class="skill-item">การนำทางใต้น้ำ (Compass + Landmark)</div>
+      <div class="skill-item">4 Checkout Dives จริงในทะเลพัทยา</div>
+      <div class="skill-item">ใบรับรอง SSI Open Water Diver (ใช้ได้ทั่วโลก)</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="section-label">ขั้นตอน</span>
+    <h2 class="section-title">เรียนยังไง? ไปที่ไหนบ้าง?</h2>
+    <p class="section-intro">ไม่ต้องลาหยุดงานยาว ไม่ต้องเดินทางไกล — ออกแบบมาสำหรับคนกรุงเทพโดยเฉพาะ</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-badge">📱 กรุงเทพ · ออนไลน์</div>
+          <h3>เรียนทฤษฎี — ที่ไหนก็ได้</h3>
+          <p>เรียนผ่าน SSI Digital Learning — แอปหรือเว็บไซต์บนมือถือ/คอมพิวเตอร์
+          ใช้เวลาประมาณ 8–10 ชั่วโมง เรียนได้เองที่บ้าน ออฟฟิศ หรือร้านกาแฟ
+          ครูจะติดตามและตอบคำถามผ่าน LINE</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-badge">🏊 กรุงเทพ · สระว่ายน้ำ</div>
+          <h3>ฝึกทักษะในสระ — กรุงเทพ</h3>
+          <p>ฝึก confined water skills ในสระที่กรุงเทพ ใช้เวลา 1–2 วัน (เย็นวันธรรมดาหรือวันเสาร์)
+          เรียนรู้การสวมใส่อุปกรณ์ การหายใจ การลอยตัว และทักษะฉุกเฉินเบื้องต้น
+          อุปกรณ์ครบจาก Dive Feels ไม่ต้องซื้อเอง</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-badge">🌊 พัทยา · ทะเล</div>
+          <h3>Checkout Dives — พัทยา 1 คืน</h3>
+          <p>เดินทางไปพัทยา (ประมาณ 2 ชั่วโมงจากกรุงเทพ) 1 คืน 2 วัน
+          ดำน้ำ 4 dives ในทะเลจริง ผ่าน checkout กับ SSI Instructor
+          เมื่อผ่านทุก skill ครบถ้วน รับใบรับรอง SSI Open Water Diver ได้เลย</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-badge">🎓 ได้ใบเซอร์!</div>
+          <h3>รับ Digital C-Card — ใช้ได้ทั่วโลก</h3>
+          <p>ใบรับรอง SSI Open Water Diver เป็น Digital Card เก็บในมือถือได้
+          ใช้ได้ทุกที่ทั่วโลก ดำน้ำได้ลึกถึง 18 เมตร กับ Dive Center ทุกแห่งที่รับ SSI</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">สิ่งที่รวมอยู่ในคอร์ส</span>
+    <h2 class="section-title">คอร์สรวมอะไรบ้าง?</h2>
+    <div class="includes-grid">
+      <div class="include-item">
+        <div class="include-icon">📱</div>
+        <div class="include-text">
+          <h4>SSI Digital Learning</h4>
+          <p>แพ็กเกจเรียนออนไลน์อย่างเป็นทางการจาก SSI</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🤿</div>
+        <div class="include-text">
+          <h4>อุปกรณ์ดำน้ำครบชุด</h4>
+          <p>BCD, Regulator, Wetsuit, Mask, Fins, Tank</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🏊</div>
+        <div class="include-text">
+          <h4>Pool Training กรุงเทพ</h4>
+          <p>ฝึกในสระพร้อมครู SSI Instructor</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">⛵</div>
+        <div class="include-text">
+          <h4>Boat & 4 Checkout Dives พัทยา</h4>
+          <p>เรือ + ดำน้ำ 4 dives พร้อมครูดูแลตลอด</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🎓</div>
+        <div class="include-text">
+          <h4>SSI C-Card Digital</h4>
+          <p>ใบรับรองดิจิทัล SSI Open Water Diver</p>
+        </div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🧑‍🏫</div>
+        <div class="include-text">
+          <h4>ครู SSI Instructor ดูแล</h4>
+          <p>ตั้งแต่ต้นจนจบ ผ่าน LINE ได้ตลอด</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ MINI -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="section-label">คำถามที่พบบ่อย</span>
+    <h2 class="section-title">มีข้อสงสัย?</h2>
+    <div class="faq-list" style="max-width:720px;">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">ว่ายน้ำไม่เก่งเรียนได้ไหม? <span class="arrow">▼</span></button>
+        <div class="faq-a">ได้เลยครับ ไม่จำเป็นต้องว่ายน้ำเก่ง แค่ว่ายน้ำได้พื้นฐาน (ลอยตัวได้ ว่ายน้ำได้ 200 เมตร) ก็พอ ครูจะสอนทุกอย่างตั้งแต่ต้นในสระก่อน</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">ใช้เวลากี่วัน? ต้องลาหยุดงานไหม? <span class="arrow">▼</span></button>
+        <div class="faq-a">ทฤษฎีเรียนออนไลน์ได้เลย ฝึกสระในกรุงเทพ 1–2 วัน (เย็นวันธรรมดาหรือเสาร์ได้) แล้วค่อยไปพัทยา 1 คืน 2 วัน รวมแล้วใช้แค่ 1 สุดสัปดาห์ก็จบได้</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">มีโรคประจำตัวเรียนได้ไหม? <span class="arrow">▼</span></button>
+        <div class="faq-a">ขึ้นอยู่กับโรคครับ เช่น โรคหัวใจ ความดันสูง หรือโรคปอดบางชนิดอาจมีข้อจำกัด แนะนำให้ปรึกษาครูก่อนสมัครเพื่อประเมินร่วมกัน</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">หลังจบแล้วดำน้ำได้ที่ไหน? <span class="arrow">▼</span></button>
+        <div class="faq-a">ใบ SSI Open Water Diver ใช้ได้ทั่วโลก ดำน้ำได้ลึกถึง 18 เมตร ไม่ว่าจะเป็นพัทยา สิมิลัน เกาะเต่า ราชาอัมพัต หรือมัลดีฟส์</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">สมัครยังไง? ราคาเท่าไหร่? <span class="arrow">▼</span></button>
+        <div class="faq-a">ทักหา Dive Feels ผ่าน LINE หรือ Facebook ได้เลยครับ ทีมงานจะให้ข้อมูลราคา + รายละเอียดตาราง + ตอบทุกคำถาม ไม่มีค่าใช้จ่ายในการสอบถาม</div>
+      </div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="../faq.html" class="btn btn-teal">ดู FAQ ทั้งหมด →</a>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED COURSES -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">คอร์สถัดไป</span>
+    <h2 class="section-title">หลังจบ Open Water แล้ว?</h2>
+    <p class="section-intro">เมื่อได้ใบ OW แล้ว สามารถต่อยอดได้หลายเส้นทาง</p>
+    <div class="related-grid">
+      <a href="advanced.html" class="related-card">
+        <div class="related-card-img" style="background-image:url('../assets/images/coral-reef.jpg');"></div>
+        <div class="related-card-body">
+          <h3>Advanced Open Water Diver</h3>
+          <p>ดำลึกถึง 30 ม. เรียนการนำทาง ถ่ายภาพใต้น้ำ และ Nitrox เบื้องต้น</p>
+        </div>
+      </a>
+      <a href="nitrox.html" class="related-card">
+        <div class="related-card-img" style="background-image:url('../assets/images/fish-school.jpg');"></div>
+        <div class="related-card-body">
+          <h3>Nitrox / EANx Specialty</h3>
+          <p>ดำนานขึ้น เหนื่อยน้อยลง ด้วยแก๊สไนตรอกซ์</p>
+        </div>
+      </a>
+      <a href="../index.html#trips" class="related-card">
+        <div class="related-card-img" style="background-image:url('../assets/images/tropical-beach.jpg');"></div>
+        <div class="related-card-body">
+          <h3>ทริปดำน้ำกับ Dive Feels</h3>
+          <p>เข้าร่วมทริปสิมิลัน ราชาอัมพัต และอีกมากมาย</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>พร้อมเริ่มดำน้ำแล้วใช่ไหม?</h2>
+  <p>ทักหาเราผ่าน LINE เพื่อสอบถามรายละเอียด ตาราง และราคา ฟรี ไม่มีข้อผูกมัด</p>
+  <div class="cta-group">
+    <a href="https://lin.ee/8X48Hij" class="btn btn-red" target="_blank" rel="noopener">💬 LINE สอบถามเลย</a>
+    <a href="https://www.facebook.com/divefeels" class="btn btn-outline-white" target="_blank" rel="noopener">📘 Facebook</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="../index.html">หน้าแรก</a>
+    <a href="../about.html">เกี่ยวกับเรา</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../contact.html">ติดต่อ</a>
+    <a href="https://www.facebook.com/divefeels" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/divefeels" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <p>© 2025 Dive Feels · SSI Certified Dive School · Bangkok & Pattaya, Thailand</p>
+</footer>
+
+<!-- STICKY LINE -->
+<a href="https://lin.ee/8X48Hij" class="sticky-line-btn" target="_blank" rel="noopener" aria-label="LINE">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+</a>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ คำถามที่พบบ่อย | Dive Feels โรงเรียนสอนดำน้ำ กรุงเทพ</title>
+  <meta name="description" content="คำถามที่พบบ่อยเกี่ยวกับการเรียนดำน้ำที่ Dive Feels ราคา ตาราง สถานที่ สุขภาพ และอุปกรณ์ ตอบทุกข้อสงสัยก่อนเริ่มเรียน">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--color-navy-deep:#1C2B3A;--color-navy-ocean:#2E4A6A;--color-teal:#5BA8B8;--color-red:#E31837;--color-bg:#FFF6F0;--color-white:#FFFFFF;--color-surface:#F5EDE8;--color-border:#E8DDD8;--color-text-primary:#1C2B3A;--color-text-body:#3D4F5C;--color-text-muted:#7A8C99;--color-teal-tint-1:#EAF5F7;--font-heading:'Prompt',system-ui,sans-serif;--font-body:'Sarabun',system-ui,sans-serif;--shadow-sm:0 1px 3px rgba(28,43,58,.08);--shadow-md:0 4px 12px rgba(28,43,58,.10);--radius-md:8px;--radius-lg:12px;--radius-full:9999px;--transition-base:250ms ease;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);font-size:1rem;line-height:1.7;color:var(--color-text-body);background:var(--color-bg);}
+    a{color:var(--color-teal);text-decoration:none;}
+    h1,h2,h3,h4{font-family:var(--font-heading);color:var(--color-text-primary);line-height:1.3;}
+    .container{max-width:860px;margin:0 auto;padding:0 24px;}
+    .container-wide{max-width:1100px;margin:0 auto;padding:0 24px;}
+    nav{position:sticky;top:0;z-index:100;background:var(--color-navy-deep);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,.2);}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .nav-logo img{height:36px;}
+    .nav-logo-text{font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:#fff;}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links a{color:rgba(255,255,255,.8);font-size:.9rem;font-family:var(--font-heading);}
+    .nav-links a:hover{color:var(--color-teal);}
+    .nav-cta{background:var(--color-red);color:#fff !important;padding:8px 18px;border-radius:var(--radius-full);font-weight:600 !important;}
+    @media(max-width:768px){.nav-links{display:none;}}
+    .page-hero{background:linear-gradient(135deg,var(--color-navy-deep),var(--color-navy-ocean));color:#fff;padding:72px 24px;text-align:center;}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:14px;}
+    .page-hero p{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:540px;margin:0 auto;}
+    .section{padding:64px 0;}
+    .section-alt{background:var(--color-surface);}
+    .faq-category{margin-bottom:56px;}
+    .category-label{display:inline-flex;align-items:center;gap:8px;background:var(--color-teal-tint-1);color:var(--color-navy-ocean);font-size:.8rem;font-weight:700;font-family:var(--font-heading);letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:var(--radius-full);margin-bottom:20px;}
+    .category-title{font-size:1.3rem;font-weight:700;margin-bottom:20px;color:var(--color-navy-deep);}
+    .faq-list{display:flex;flex-direction:column;gap:10px;}
+    .faq-item{background:var(--color-white);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);overflow:hidden;border:1.5px solid transparent;transition:border-color var(--transition-base);}
+    .faq-item.open{border-color:var(--color-teal);}
+    .faq-q{width:100%;text-align:left;padding:18px 22px;font-family:var(--font-heading);font-size:.97rem;font-weight:600;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--color-text-primary);gap:16px;}
+    .faq-q .arrow{transition:transform var(--transition-base);font-size:.8rem;color:var(--color-text-muted);flex-shrink:0;}
+    .faq-item.open .faq-q .arrow{transform:rotate(180deg);color:var(--color-teal);}
+    .faq-a{display:none;padding:0 22px 18px;font-size:.92rem;color:var(--color-text-body);line-height:1.8;border-top:1px solid var(--color-border);}
+    .faq-a p{padding-top:14px;}
+    .faq-a ul{padding-top:14px;padding-left:20px;display:flex;flex-direction:column;gap:6px;}
+    .faq-a ul li{font-size:.9rem;}
+    .faq-item.open .faq-a{display:block;}
+    .still-have-q{background:var(--color-navy-deep);color:#fff;border-radius:var(--radius-lg);padding:40px;text-align:center;margin-top:48px;}
+    .still-have-q h3{font-size:1.3rem;font-weight:700;margin-bottom:10px;}
+    .still-have-q p{color:rgba(255,255,255,.75);margin-bottom:24px;font-size:.95rem;}
+    .btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--radius-full);font-family:var(--font-heading);font-weight:600;font-size:.9rem;cursor:pointer;border:none;transition:all var(--transition-base);text-decoration:none;}
+    .btn-green{background:#06C755;color:#fff;}
+    .btn-green:hover{background:#05A846;}
+    .btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4);}
+    .btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,.1);}
+    footer{background:var(--color-navy-deep);color:rgba(255,255,255,.6);padding:40px 24px;text-align:center;font-size:.85rem;}
+    footer a{color:var(--color-teal);}
+    .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:16px;flex-wrap:wrap;}
+    .sticky-line-btn{position:fixed;bottom:24px;right:24px;z-index:200;background:#06C755;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(6,199,85,.4);text-decoration:none;transition:transform var(--transition-base);}
+    .sticky-line-btn:hover{transform:scale(1.1);}
+  </style>
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"เรียนดำน้ำที่ Dive Feels ต้องออกเกาะไหม?","acceptedAnswer":{"@type":"Answer","text":"ไม่ต้องออกเกาะเลย เรียนทฤษฎีและฝึกสระในกรุงเทพ แล้วค่อยไป checkout dives ที่พัทยา (ห่างกรุงเทพ 2 ชั่วโมง) แค่ 1 คืน 2 วัน"}},
+      {"@type":"Question","name":"ว่ายน้ำไม่เก่งเรียนดำน้ำได้ไหม?","acceptedAnswer":{"@type":"Answer","text":"ได้เลย แค่ว่ายน้ำพื้นฐานได้ (200 เมตร) และลอยตัวได้ 10 นาที ก็เพียงพอ ครูจะสอนทุกอย่างตั้งแต่ต้น"}},
+      {"@type":"Question","name":"ใบรับรอง SSI ใช้ได้ทั่วโลกไหม?","acceptedAnswer":{"@type":"Answer","text":"ใช้ได้ทั่วโลก SSI เป็นองค์กรรับรองระดับสากล เทียบเท่า PADI ทุกประการ Dive Center ทั่วโลกรับใบ SSI"}},
+      {"@type":"Question","name":"เรียนดำน้ำใช้เวลากี่วัน?","acceptedAnswer":{"@type":"Answer","text":"Open Water Diver ใช้ประมาณ 3-4 วัน ทฤษฎีเรียนออนไลน์ได้ ฝึกสระในกรุงเทพ 1-2 วัน แล้วไปพัทยา 1 คืน 2 วันสำหรับ checkout dives"}}
+    ]
+  }
+  </script>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="assets/images/logo.png" alt="Dive Feels" onerror="this.style.display='none'">
+    <span class="nav-logo-text">Dive Feels</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#courses">คอร์สดำน้ำ</a></li>
+    <li><a href="index.html#destinations">จุดดำน้ำ</a></li>
+    <li><a href="index.html#trips">ทริป</a></li>
+    <li><a href="about.html">เกี่ยวกับเรา</a></li>
+    <li><a href="faq.html" style="color:var(--color-teal);">FAQ</a></li>
+    <li><a href="https://lin.ee/8X48Hij" class="nav-cta" target="_blank" rel="noopener">💬 LINE สอบถาม</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <h1>คำถามที่พบบ่อย (FAQ)</h1>
+  <p>รวมคำตอบสำหรับทุกคำถามที่อยากรู้ก่อนเริ่มเรียนดำน้ำ</p>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- 1. เริ่มต้น -->
+    <div class="faq-category">
+      <div class="category-label">🌱 สำหรับมือใหม่</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ไม่เคยดำน้ำเลย เริ่มต้นยังไง? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>เริ่มจากคอร์ส <strong>Open Water Diver</strong> เลยครับ ไม่ต้องมีประสบการณ์มาก่อน ทางเราจะเริ่มสอนตั้งแต่ทฤษฎีพื้นฐาน ฝึกในสระ จนกระทั่ง checkout dives จริงในทะเล ทักหาเราผ่าน LINE แล้วครูจะแนะนำทุกขั้นตอน</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ว่ายน้ำไม่เก่ง เรียนได้ไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ได้เลยครับ ข้อกำหนดขั้นต่ำคือว่ายน้ำได้ 200 เมตร (ไม่กำหนดท่า) และลอยตัวหรือเหยียบน้ำได้ 10 นาที แค่นี้พอ ไม่ต้องว่ายเก่งหรือว่ายเร็ว ครูจะสอนทุกอย่างในสระก่อนลงทะเลจริง</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">อายุเท่าไหร่ถึงเรียนได้? <span class="arrow">▼</span></button>
+          <div class="faq-a"><ul><li>Open Water Diver: อายุ 10 ปีขึ้นไป (ต่ำกว่า 15 ปี ได้ Junior OW Diver ก่อน)</li><li>Advanced Open Water: อายุ 12 ปีขึ้นไป</li><li>ไม่มีข้อกำหนดอายุสูงสุด แต่แนะนำให้ปรึกษาแพทย์ก่อนหากมีอายุมาก</li></ul></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ต้องออกเกาะไหม? ใช้เวลากี่วัน? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ไม่ต้องออกเกาะเลย! นี่คือจุดเด่นของ Dive Feels — เรียนทฤษฎีออนไลน์ ฝึกสระในกรุงเทพ แล้วไปพัทยาแค่ 1 คืน 2 วันสำหรับ checkout dives รวมทั้งหมดประมาณ 3–4 วัน (ไม่ต้องลาหยุดต่อเนื่อง)</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ราคาและการสมัคร -->
+    <div class="faq-category">
+      <div class="category-label">💰 ราคาและการสมัคร</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ค่าเรียนเท่าไหร่? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ทาง Dive Feels ไม่แสดงราคาบนเว็บไซต์ เนื่องจากราคาอาจแตกต่างตามช่วงเวลา โปรโมชัน และแพ็กเกจ กรุณาทักหาเราผ่าน <a href="https://lin.ee/8X48Hij" target="_blank">LINE OA</a> หรือ <a href="https://www.facebook.com/divefeels" target="_blank">Facebook</a> เพื่อรับราคาล่าสุดพร้อมรายละเอียดครับ</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ค่าเรียนรวมอะไรบ้าง? <span class="arrow">▼</span></button>
+          <div class="faq-a"><ul><li>SSI Digital Learning (เรียนออนไลน์)</li><li>อุปกรณ์ดำน้ำครบชุดระหว่างเรียน (BCD, Regulator, Wetsuit, Mask, Fins)</li><li>ค่าสระสำหรับ confined water training</li><li>เรือและ 4 checkout dives ที่พัทยา</li><li>ครู SSI Instructor ดูแลตลอด</li><li>ใบรับรอง SSI Digital C-Card</li></ul></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">สมัครและชำระเงินยังไง? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ทักหาเราผ่าน LINE หรือ Facebook ก่อน ทีมงานจะนัดคุยรายละเอียด ตาราง และส่งข้อมูลการชำระเงิน ไม่มีค่าใช้จ่ายในการสอบถาม</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. สุขภาพ -->
+    <div class="faq-category">
+      <div class="category-label">🏥 สุขภาพและข้อกำหนด</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">มีโรคประจำตัวเรียนได้ไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ขึ้นอยู่กับโรคครับ โรคที่อาจมีข้อจำกัด ได้แก่ โรคหัวใจ ความดันโลหิตสูงที่ยังไม่ควบคุมได้ โรคปอดบางชนิด โรคลมชัก และโรคหูชั้นกลาง แนะนำให้แจ้งครูก่อนสมัครเสมอ เราจะประเมินร่วมกันและอาจแนะนำให้ขอใบรับรองแพทย์ก่อน</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ผู้หญิงที่กำลังตั้งครรภ์เรียนได้ไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ไม่แนะนำให้ดำน้ำระหว่างตั้งครรภ์ครับ เนื่องจากยังไม่มีข้อมูลที่ชัดเจนเกี่ยวกับความปลอดภัยของทารกในครรภ์ภายใต้แรงดันน้ำ แนะนำให้รอจนคลอดและหยุดนมแล้วก่อน</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ต้องผ่านการตรวจสุขภาพก่อนเรียนไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ก่อนเริ่มเรียนทุกคนต้องกรอก Medical Statement ของ SSI ซึ่งเป็นแบบสอบถามด้านสุขภาพ ถ้าตอบ "ใช่" ในบางข้อ อาจต้องขอใบรับรองแพทย์ก่อน ครูจะแนะนำขั้นตอนให้ตั้งแต่ต้น</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ใส่แว่นสายตาดำน้ำได้ไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ได้ครับ มีหลายทางเลือก คือ 1) Mask ที่ใส่ตามใบสั่งแพทย์ (prescription lens) 2) ใส่ Contact lens ใต้ Mask (ต้องระวังน้ำเข้าตา) 3) Mask ที่มี Optical lens สำเร็จรูปในราคาย่อมเยา ปรึกษาครูเพื่อเลือกแบบที่เหมาะกับคุณ</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. อุปกรณ์ -->
+    <div class="faq-category">
+      <div class="category-label">🤿 อุปกรณ์ดำน้ำ</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ต้องซื้ออุปกรณ์เองไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ไม่จำเป็นครับ ตลอดการเรียน Dive Feels จัดอุปกรณ์ครบชุดให้ฟรี ได้แก่ BCD, Regulator, Wetsuit, Mask, Fins, Tank ถ้าอยากมีอุปกรณ์เป็นของตัวเอง ครูยินดีแนะนำการเลือกซื้อในราคาคุ้มค่า</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ต้องเตรียมอะไรมาบ้างวันเรียน? <span class="arrow">▼</span></button>
+          <div class="faq-a"><ul><li>ชุดว่ายน้ำ</li><li>ผ้าเช็ดตัว</li><li>น้ำดื่ม</li><li>ครีมกันแดด (แบบ Reef-safe แนะนำ)</li><li>ยาแก้แพ้ (ถ้าเป็นภูมิแพ้)</li><li>ยาแก้เมาเรือ (สำหรับวันไปพัทยา)</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. ใบเซอร์ -->
+    <div class="faq-category">
+      <div class="category-label">🎓 ใบรับรองและการดำน้ำหลังเรียน</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ใบรับรอง SSI ใช้ได้ทั่วโลกจริงไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>จริงครับ SSI (Scuba Schools International) เป็นองค์กรรับรองการดำน้ำระดับสากล มีสาขาใน 110+ ประเทศ Dive Center ทั่วโลกรับใบ SSI เทียบเท่า PADI ทุกประการ ไม่มีปัญหาในการเช่าอุปกรณ์หรือเข้าร่วม Dive Trip ทั่วโลก</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">ใบรับรองหมดอายุไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ไม่หมดอายุครับ ใบ SSI ใช้ได้ตลอดชีวิต แต่ถ้าไม่ได้ดำน้ำมานาน (เกิน 1–2 ปี) แนะนำให้ทำ Refresher Course หรือ Scuba Skills Update ก่อนลงทริปจริง เพื่อให้ทักษะกลับมาสด Dive Feels มีบริการนี้สำหรับสมาชิกที่จะไปทริปด้วย</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">จบ OW แล้วดำน้ำได้ลึกแค่ไหน ที่ไหนได้บ้าง? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>OW Diver ดำได้ลึกสุด 18 เมตร ดำได้ทุกที่ทั่วโลกที่มี Dive Center รับ SSI รวมถึงพัทยา เกาะเต่า เกาะสมุย สิมิลัน และต่างประเทศ ถ้าอยากดำลึกขึ้น (30 เมตร) หรือเข้าร่วม Liveaboard Trip ระดับสูง แนะนำต่อ Advanced OW Diver</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggle(this)">หลังจบสามารถเข้าร่วมทริปของ Dive Feels ได้เลยไหม? <span class="arrow">▼</span></button>
+          <div class="faq-a"><p>ได้เลยครับ! Dive Feels จัดทริป Liveaboard ประมาณ 15 ทริปต่อปี ทั้งในประเทศ (สิมิลัน เกาะช้าง อ่าวไทย) และต่างประเทศ (ราชาอัมพัต มาลาปาสกัว มัลดีฟส์) นักเรียนของเราได้รับข้อมูลทริปก่อนใครผ่าน LINE OA</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STILL HAVE Q -->
+    <div class="still-have-q">
+      <h3>ยังมีคำถามอีก?</h3>
+      <p>ทักหาเราโดยตรงผ่าน LINE ทีมงานยินดีตอบทุกคำถามโดยไม่มีค่าใช้จ่าย</p>
+      <div class="btn-group">
+        <a href="https://lin.ee/8X48Hij" class="btn btn-green" target="_blank" rel="noopener">💬 LINE สอบถามเลย</a>
+        <a href="contact.html" class="btn btn-outline-white">ติดต่อช่องทางอื่น</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">หน้าแรก</a>
+    <a href="about.html">เกี่ยวกับเรา</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">ติดต่อ</a>
+    <a href="https://www.facebook.com/divefeels" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/divefeels" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <p>© 2025 Dive Feels · SSI Certified Dive School · Bangkok & Pattaya, Thailand</p>
+</footer>
+<a href="https://lin.ee/8X48Hij" class="sticky-line-btn" target="_blank" rel="noopener" aria-label="LINE">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+</a>
+<script>
+function toggle(btn) {
+  btn.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
