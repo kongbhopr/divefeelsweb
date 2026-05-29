@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เรียนดำน้ำกรุงเทพ จบ cert พัทยา | Dive Feels — SSI Certified Dive School</title>
+  <meta name="description" content="เรียนดำน้ำในกรุงเทพ ฝึกในสระ จบ cert ที่พัทยา ไม่ต้องออกเกาะ SSI Certified School ตารางยืดหยุ่น ทีมครูมืออาชีพ สอบถามทาง LINE ได้เลย">
+
+  <!-- Google Fonts: Prompt (headings) + Sarabun (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════════
+       DESIGN TOKENS (from design-tokens.css)
+    ══════════════════════════════════════════════ */
+    :root {
+      --color-navy-deep:    #1C2B3A;
+      --color-navy-ocean:   #2E4A6A;
+      --color-teal:         #5BA8B8;
+      --color-red:          #E31837;
+      --color-coral:        #FF9B7A;
+      --color-bg:           #FFF6F0;
+      --color-white:        #FFFFFF;
+      --color-surface:      #F5EDE8;
+      --color-border:       #E8DDD8;
+      --color-text-primary: #1C2B3A;
+      --color-text-body:    #3D4F5C;
+      --color-text-muted:   #7A8C99;
+      --color-text-on-dark: #FFFFFF;
+      --color-cta:          #E31837;
+      --color-cta-hover:    #C4142E;
+      --color-link:         #5BA8B8;
+      --color-teal-tint-1:  #EAF5F7;
+      --color-teal-tint-2:  #C5E5EC;
+      --color-coral-tint-1: #FFF0EB;
+      --color-navy-tint-1:  #E8EDF2;
+      --font-heading: 'Prompt', system-ui, sans-serif;
+      --font-body:    'Sarabun', system-ui, sans-serif;
+      --shadow-sm: 0 1px 3px rgba(28,43,58,.08);
+      --shadow-md: 0 4px 12px rgba(28,43,58,.10);
+      --shadow-lg: 0 8px 24px rgba(28,43,58,.12);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --radius-full: 9999px;
+      --transition-base: 250ms ease;
+    }
+
+    /* ══════════════════════════════════════════════
+       RESET & BASE
+    ══════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--color-text-body);
+      background: var(--color-bg);
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--color-link); text-decoration: none; transition: color var(--transition-base); }
+    a:hover { color: var(--color-teal); }
+    h1,h2,h3,h4,h5 { font-family: var(--font-heading); color: var(--color-text-primary); line-height: 1.3; }
+
+    /* ══════════════════════════════════════════════
+       UTILITIES
+    ══════════════════════════════════════════════ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 80px 0; }
+    .section-pad-sm { padding: 56px 0; }
+    .text-center { text-align: center; }
+    .text-white { color: var(--color-text-on-dark); }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--color-teal-tint-1); color: var(--color-navy-ocean);
+      font-size: .75rem; font-weight: 600; font-family: var(--font-heading);
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: var(--radius-full);
+      border: 1px solid var(--color-teal-tint-2);
+    }
+    .section-label {
+      font-family: var(--font-heading); font-size: .8rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--color-teal);
+      margin-bottom: 12px; display: block;
+    }
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700;
+      color: var(--color-text-primary); margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--color-text-body);
+      max-width: 580px; line-height: 1.7;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+    /* ══════════════════════════════════════════════
+       BUTTONS
+    ══════════════════════════════════════════════ */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font-heading); font-size: .95rem; font-weight: 600;
+      padding: 14px 28px; border-radius: var(--radius-md);
+      border: 2px solid transparent; cursor: pointer;
+      transition: all var(--transition-base); text-decoration: none; line-height: 1.2;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--color-cta); color: #fff; border-color: var(--color-cta);
+    }
+    .btn-primary:hover { background: var(--color-cta-hover); border-color: var(--color-cta-hover); color: #fff; }
+    .btn-outline {
+      background: transparent; color: var(--color-white);
+      border-color: rgba(255,255,255,.5);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; color: #fff; }
+    .btn-teal { background: var(--color-teal); color: #fff; border-color: var(--color-teal); }
+    .btn-teal:hover { background: #4A8F9E; border-color: #4A8F9E; color: #fff; }
+    .btn-line { background: #06C755; color: #fff; border-color: #06C755; }
+    .btn-line:hover { background: #05A947; border-color: #05A947; color: #fff; }
+    .btn-sm { padding: 10px 20px; font-size: .875rem; }
+    .btn-lg { padding: 18px 36px; font-size: 1.05rem; }
+
+    /* ══════════════════════════════════════════════
+       PLACEHOLDER IMAGES (for draft)
+    ══════════════════════════════════════════════ */
+    .img-placeholder {
+      background: linear-gradient(135deg, #2E4A6A 0%, #5BA8B8 60%, #1C2B3A 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.6); font-size: .8rem; font-family: var(--font-body);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .img-placeholder[style*="background-image"]::after { display: none; }
+    .img-placeholder::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 20px,
+        rgba(255,255,255,.03) 20px, rgba(255,255,255,.03) 40px
+      );
+    }
+
+    /* ══════════════════════════════════════════════
+       STICKY NAV
+    ══════════════════════════════════════════════ */
+    #nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--color-navy-deep);
+      box-shadow: var(--shadow-md);
+      transition: background var(--transition-base);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; max-width: 1200px; margin: 0 auto; height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;
+      color: #fff; letter-spacing: -.01em;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo span { color: var(--color-teal); }
+    .nav-logo-mark {
+      height: 40px; width: auto; display: block; flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 4px; list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.8); font-family: var(--font-heading);
+      font-size: .875rem; font-weight: 500;
+      padding: 8px 14px; border-radius: var(--radius-sm);
+      transition: all var(--transition-base);
+    }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,.08); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-hamburger {
+      display: none; background: none; border: none;
+      color: #fff; font-size: 1.5rem; cursor: pointer; padding: 6px;
+    }
+
+    /* ══════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════ */
+    #hero {
+      background: var(--color-navy-ocean);
+      position: relative; overflow: hidden;
+      min-height: 600px; display: flex; align-items: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #1C2B3A 0%, #2E4A6A 50%, #1C4A5A 100%);
+    }
+    /* Decorative wave */
+    .hero-wave {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+      background: var(--color-bg);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    /* Decorative bubbles */
+    .hero-bubbles {
+      position: absolute; right: 5%; top: 10%; width: 45%; height: 85%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-photo {
+      width: 100%; height: 480px; border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      position: relative; overflow: hidden;
+    }
+    .hero-content { position: relative; z-index: 2; padding: 80px 24px 120px; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-badge-row { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+    .hero-h1 {
+      font-family: var(--font-heading); font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px;
+    }
+    .hero-h1 em { color: var(--color-teal); font-style: normal; }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,.8);
+      margin-bottom: 32px; max-width: 480px; line-height: 1.8;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+    .hero-trust {
+      display: flex; gap: 20px; flex-wrap: wrap; align-items: center;
+      padding-top: 24px; border-top: 1px solid rgba(255,255,255,.15);
+    }
+    .hero-trust-item {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.75); font-size: .875rem;
+    }
+    .hero-trust-item svg, .hero-trust-item .icon { color: var(--color-teal); }
+
+    /* ══════════════════════════════════════════════
+       HOW IT WORKS
+    ══════════════════════════════════════════════ */
+    #how-it-works { background: var(--color-bg); }
+    .hiw-steps {
+      display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 0;
+      align-items: start; margin-top: 48px;
+    }
+    .hiw-step { text-align: center; padding: 0 16px; }
+    .hiw-icon-wrap {
+      width: 80px; height: 80px; border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+    .hiw-icon-wrap.step-1 { background: var(--color-teal-tint-1); border: 2px solid var(--color-teal-tint-2); }
+    .hiw-icon-wrap.step-2 { background: var(--color-teal-tint-1); border: 2px solid var(--color-teal-tint-2); }
+    .hiw-icon-wrap.step-3 { background: var(--color-coral-tint-1); border: 2px solid #FFD4C2; }
+    .hiw-step-num {
+      font-family: var(--font-heading); font-size: .75rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--color-text-muted);
+      margin-bottom: 6px;
+    }
+    .hiw-step-location {
+      display: inline-block; background: var(--color-navy-tint-1);
+      color: var(--color-navy-ocean); font-size: .75rem; font-weight: 600;
+      padding: 3px 10px; border-radius: var(--radius-full); margin-bottom: 10px;
+      font-family: var(--font-heading);
+    }
+    .hiw-step-location.pattaya { background: var(--color-coral-tint-1); color: #C0442A; }
+    .hiw-step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .hiw-step p { font-size: .9rem; color: var(--color-text-muted); line-height: 1.6; }
+    .hiw-arrow {
+      display: flex; align-items: center; padding-top: 30px; color: var(--color-teal);
+      font-size: 1.5rem; align-self: center;
+    }
+    .hiw-note {
+      text-align: center; margin-top: 36px;
+      background: var(--color-teal-tint-1); border: 1px solid var(--color-teal-tint-2);
+      border-radius: var(--radius-lg); padding: 18px 32px;
+      font-size: .95rem; color: var(--color-navy-ocean);
+      display: inline-block;
+    }
+
+    /* ══════════════════════════════════════════════
+       TRUST STRIP
+    ══════════════════════════════════════════════ */
+    #trust-strip {
+      background: var(--color-navy-deep); padding: 28px 0;
+    }
+    .trust-items {
+      display: flex; align-items: center; justify-content: center;
+      gap: 48px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,.85);
+    }
+    .trust-item-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(91,168,184,.2); border: 1px solid rgba(91,168,184,.4);
+      display: flex; align-items: center; justify-content: center; font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .trust-item-text strong { display: block; font-family: var(--font-heading); font-size: 1.1rem; color: #fff; }
+    .trust-item-text span { font-size: .8rem; color: rgba(255,255,255,.6); }
+    .trust-divider { width: 1px; height: 36px; background: rgba(255,255,255,.15); }
+
+    /* ══════════════════════════════════════════════
+       COURSES
+    ══════════════════════════════════════════════ */
+    #courses { background: var(--color-surface); }
+    .courses-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 40px; gap: 24px; flex-wrap: wrap;
+    }
+    .course-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .course-card {
+      background: var(--color-white); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+      display: flex; flex-direction: column;
+    }
+    .course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .course-card-img { height: 180px; position: relative; }
+    .course-card-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--color-navy-deep); color: #fff;
+      font-size: .7rem; font-weight: 700; font-family: var(--font-heading);
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: var(--radius-full);
+    }
+    .course-card-badge.beginner { background: var(--color-teal); }
+    .course-card-badge.specialty { background: var(--color-navy-ocean); }
+    .course-card-badge.refresher { background: var(--color-coral); }
+    .course-card-badge.pro { background: var(--color-navy-deep); }
+    .course-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .course-card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+    .course-card-meta {
+      display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;
+    }
+    .course-meta-item {
+      font-size: .8rem; color: var(--color-text-muted);
+      display: flex; align-items: center; gap: 4px;
+    }
+    .course-card-desc { font-size: .875rem; color: var(--color-text-body); flex: 1; margin-bottom: 16px; }
+    .course-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 16px; border-top: 1px solid var(--color-border);
+    }
+    .course-price { font-family: var(--font-heading); font-weight: 700; color: var(--color-navy-deep); font-size: 1rem; }
+    .course-price span { font-size: .75rem; font-weight: 400; color: var(--color-text-muted); }
+
+    /* ══════════════════════════════════════════════
+       WHY DIVE FEELS
+    ══════════════════════════════════════════════ */
+    #why { background: var(--color-white); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .why-image { height: 500px; border-radius: var(--radius-xl); overflow: hidden; }
+    .why-points { display: flex; flex-direction: column; gap: 28px; margin-top: 32px; }
+    .why-point { display: flex; gap: 18px; }
+    .why-point-icon {
+      width: 52px; height: 52px; border-radius: var(--radius-md);
+      background: var(--color-teal-tint-1); border: 1px solid var(--color-teal-tint-2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .why-point-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .why-point-text p { font-size: .9rem; color: var(--color-text-muted); }
+
+    /* ══════════════════════════════════════════════
+       DESTINATIONS
+    ══════════════════════════════════════════════ */
+    #destinations { background: var(--color-surface); }
+    .dest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .dest-card {
+      border-radius: var(--radius-lg); overflow: hidden; position: relative;
+      cursor: pointer; transition: transform var(--transition-base);
+      display: flex; flex-direction: column;
+    }
+    .dest-card:hover { transform: translateY(-4px); }
+    .dest-card:hover .dest-overlay { opacity: 1; }
+    .dest-img { height: 200px; }
+    .dest-overlay {
+      position: absolute; inset: 0; background: rgba(28,43,58,.5);
+      opacity: 0; transition: opacity var(--transition-base);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .dest-info { padding: 16px; background: var(--color-white); }
+    .dest-region {
+      font-size: .75rem; font-weight: 600; font-family: var(--font-heading);
+      letter-spacing: .08em; text-transform: uppercase; color: var(--color-teal);
+      margin-bottom: 4px;
+    }
+    .dest-name { font-size: 1rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 4px; }
+    .dest-tagline { font-size: .85rem; color: var(--color-text-muted); }
+
+    /* ══════════════════════════════════════════════
+       INSTRUCTORS
+    ══════════════════════════════════════════════ */
+    #instructors { background: var(--color-white); }
+    .instructor-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .instructor-card {
+      text-align: center; padding: 28px 20px;
+      background: var(--color-surface); border-radius: var(--radius-lg);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .instructor-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .instructor-photo {
+      width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 16px;
+      border: 3px solid var(--color-teal-tint-2); overflow: hidden;
+    }
+    .instructor-name { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .instructor-cert { font-size: .8rem; color: var(--color-teal); font-weight: 600; margin-bottom: 6px; }
+    .instructor-bio { font-size: .85rem; color: var(--color-text-muted); line-height: 1.6; }
+    .instructor-langs {
+      margin-top: 12px; display: flex; gap: 6px; justify-content: center; flex-wrap: wrap;
+    }
+    .lang-tag {
+      background: var(--color-navy-tint-1); color: var(--color-navy-ocean);
+      font-size: .7rem; font-weight: 600; font-family: var(--font-heading);
+      padding: 2px 8px; border-radius: var(--radius-full);
+    }
+
+    /* ══════════════════════════════════════════════
+       REVIEWS
+    ══════════════════════════════════════════════ */
+    #reviews { background: var(--color-surface); }
+    .reviews-header { text-align: center; margin-bottom: 40px; }
+    .stars { color: #F59E0B; font-size: 1.1rem; letter-spacing: 2px; }
+    .overall-rating { font-family: var(--font-heading); font-size: 3rem; font-weight: 700; color: var(--color-navy-deep); line-height: 1; }
+    .review-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review-card {
+      background: var(--color-white); border-radius: var(--radius-lg);
+      padding: 24px; box-shadow: var(--shadow-sm);
+    }
+    .review-stars { color: #F59E0B; font-size: .9rem; margin-bottom: 12px; }
+    .review-text { font-size: .9rem; color: var(--color-text-body); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar {
+      width: 40px; height: 40px; border-radius: 50%; overflow: hidden;
+      background: var(--color-teal-tint-1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .review-name { font-weight: 600; font-size: .9rem; color: var(--color-text-primary); }
+    .review-via { font-size: .75rem; color: var(--color-text-muted); }
+
+    /* ══════════════════════════════════════════════
+       TRIPS TEASER
+    ══════════════════════════════════════════════ */
+    #trips { background: var(--color-navy-deep); }
+    .trips-header { text-align: center; margin-bottom: 48px; }
+    .trips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .trip-card {
+      border-radius: var(--radius-lg); overflow: hidden; position: relative;
+      min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end;
+      cursor: pointer;
+    }
+    .trip-img { position: absolute; inset: 0; }
+    .trip-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(28,43,58,.9) 0%, rgba(28,43,58,.2) 60%, transparent 100%);
+    }
+    .trip-info { position: relative; z-index: 2; padding: 24px; }
+    .trip-region {
+      font-size: .75rem; font-weight: 600; font-family: var(--font-heading);
+      letter-spacing: .08em; text-transform: uppercase; color: var(--color-teal);
+      margin-bottom: 6px;
+    }
+    .trip-name { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .trip-tagline { font-size: .85rem; color: rgba(255,255,255,.75); }
+
+    /* ══════════════════════════════════════════════
+       BLOG TEASER
+    ══════════════════════════════════════════════ */
+    #blog { background: var(--color-white); }
+    .blog-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .blog-card {
+      background: var(--color-surface); border-radius: var(--radius-lg);
+      overflow: hidden; transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .blog-img { height: 180px; }
+    .blog-body { padding: 20px; }
+    .blog-tag {
+      display: inline-block; background: var(--color-teal-tint-1);
+      color: var(--color-teal); font-size: .75rem; font-weight: 700;
+      font-family: var(--font-heading); letter-spacing: .05em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: var(--radius-full); margin-bottom: 12px;
+    }
+    .blog-tag.coral { background: var(--color-coral-tint-1); color: #C0442A; }
+    .blog-tag.navy { background: var(--color-navy-tint-1); color: var(--color-navy-ocean); }
+    .blog-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+    .blog-excerpt { font-size: .875rem; color: var(--color-text-muted); margin-bottom: 14px; line-height: 1.6; }
+    .blog-meta { font-size: .8rem; color: var(--color-text-muted); }
+    .blog-read-more { color: var(--color-teal); font-weight: 600; font-size: .875rem; }
+    .blog-read-more:hover { color: var(--color-navy-ocean); }
+
+    /* ══════════════════════════════════════════════
+       LINE CTA BANNER
+    ══════════════════════════════════════════════ */
+    #cta-banner {
+      background: linear-gradient(135deg, #1C2B3A 0%, #2E4A6A 100%);
+      padding: 64px 0;
+    }
+    .cta-banner-inner {
+      display: flex; align-items: center; gap: 48px;
+      max-width: 900px; margin: 0 auto; flex-wrap: wrap; justify-content: center;
+    }
+    .cta-banner-text { flex: 1; min-width: 280px; }
+    .cta-banner-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .cta-banner-sub { font-size: 1rem; color: rgba(255,255,255,.75); margin-bottom: 24px; }
+    .cta-banner-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .cta-qr {
+      width: 120px; flex-shrink: 0; text-align: center;
+    }
+    .cta-qr-box {
+      width: 100px; height: 100px; background: #fff; border-radius: var(--radius-md);
+      margin: 0 auto 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .cta-qr-label { font-size: .75rem; color: rgba(255,255,255,.6); }
+
+    /* ══════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════ */
+    #footer { background: #111D28; padding: 56px 0 32px; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-logo {
+      font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;
+      color: #fff; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .footer-logo span { color: var(--color-teal); }
+    .footer-tagline { font-size: .9rem; color: rgba(255,255,255,.5); margin-bottom: 18px; line-height: 1.6; }
+    .footer-contact p { font-size: .875rem; color: rgba(255,255,255,.55); line-height: 2; }
+    .footer-contact a { color: rgba(255,255,255,.55); }
+    .footer-contact a:hover { color: var(--color-teal); }
+    .footer-social { display: flex; gap: 10px; margin-top: 14px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.6); font-size: .9rem;
+      transition: all var(--transition-base);
+    }
+    .footer-social a:hover { background: var(--color-teal); border-color: var(--color-teal); color: #fff; }
+    .footer-col h4 {
+      font-family: var(--font-heading); font-size: .8rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { color: rgba(255,255,255,.55); font-size: .875rem; transition: color var(--transition-base); }
+    .footer-col a:hover { color: var(--color-teal); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+      font-size: .8rem; color: rgba(255,255,255,.35);
+    }
+    .footer-bottom a { color: rgba(255,255,255,.35); }
+    .footer-bottom a:hover { color: rgba(255,255,255,.6); }
+
+    /* ══════════════════════════════════════════════
+       STICKY LINE BUTTON
+    ══════════════════════════════════════════════ */
+    #sticky-line {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    }
+    .sticky-line-btn {
+      display: flex; align-items: center; gap: 10px;
+      background: #06C755; color: #fff;
+      padding: 13px 20px; border-radius: var(--radius-full);
+      box-shadow: 0 4px 20px rgba(6,199,85,.35);
+      font-family: var(--font-heading); font-weight: 600; font-size: .9rem;
+      text-decoration: none; transition: all var(--transition-base);
+      border: none; cursor: pointer;
+    }
+    .sticky-line-btn:hover { transform: scale(1.05); box-shadow: 0 6px 24px rgba(6,199,85,.45); color: #fff; }
+    .sticky-line-icon { font-size: 1.3rem; }
+
+    /* ══════════════════════════════════════════════
+       MOBILE MENU (hidden by default)
+    ══════════════════════════════════════════════ */
+    #mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 99;
+      background: var(--color-navy-deep); padding: 100px 32px 40px;
+      flex-direction: column; gap: 8px;
+    }
+    #mobile-menu.open { display: flex; }
+    #mobile-menu a {
+      color: rgba(255,255,255,.8); font-family: var(--font-heading);
+      font-size: 1.2rem; font-weight: 500; padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    #mobile-menu a:hover { color: var(--color-teal); }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .course-cards { grid-template-columns: repeat(2, 1fr); }
+      .instructor-cards { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta .btn { display: none; }
+      .nav-hamburger { display: block; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-bubbles { display: none; }
+      .hero-content { padding: 56px 24px 80px; }
+      .hiw-steps { grid-template-columns: 1fr; gap: 24px; }
+      .hiw-arrow { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-image { height: 300px; }
+      .course-cards { grid-template-columns: 1fr; }
+      .dest-grid { grid-template-columns: 1fr 1fr; }
+      .trips-grid { grid-template-columns: 1fr; }
+      .review-cards { grid-template-columns: 1fr; }
+      .blog-cards { grid-template-columns: 1fr; }
+      .instructor-cards { grid-template-columns: 1fr 1fr; }
+      .trust-items { gap: 24px; }
+      .trust-divider { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .cta-banner-inner { flex-direction: column; text-align: center; }
+      .cta-banner-actions { justify-content: center; }
+      .section-pad { padding: 56px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .dest-grid { grid-template-columns: 1fr; }
+      .instructor-cards { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     STICKY NAVIGATION
+══════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Dive Feels Home">
+      <img class="nav-logo-mark" src="assets/images/logo.png" alt="Dive Feels Logo"
+           onerror="this.style.display='none'; this.nextSibling.style.display='flex';">
+      <span style="display:none; align-items:center; gap:6px;">🤿 Dive <em style="color:var(--color-teal);font-style:normal;">Feels</em></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#courses">คอร์ส</a></li>
+      <li><a href="#destinations">สถานที่</a></li>
+      <li><a href="#trips">ทริป</a></li>
+      <li><a href="#why">เกี่ยวกับเรา</a></li>
+      <li><a href="#conservation">อนุรักษ์</a></li>
+      <li><a href="#blog">บทความ</a></li>
+      <li><a href="#footer">ติดต่อ</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="https://lin.ee/8X48Hij" class="btn btn-line btn-sm" target="_blank" rel="noopener">
+        💬 LINE OA
+      </a>
+    </div>
+
+    <button class="nav-hamburger" onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-label="เมนู">
+      ☰
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" role="navigation">
+  <a href="#courses" onclick="document.getElementById('mobile-menu').classList.remove('open')">คอร์สเรียนดำน้ำ</a>
+  <a href="#destinations" onclick="document.getElementById('mobile-menu').classList.remove('open')">สถานที่ดำน้ำ</a>
+  <a href="#trips" onclick="document.getElementById('mobile-menu').classList.remove('open')">ทริปดำน้ำ</a>
+  <a href="#why" onclick="document.getElementById('mobile-menu').classList.remove('open')">เกี่ยวกับเรา</a>
+  <a href="#conservation" onclick="document.getElementById('mobile-menu').classList.remove('open')">🌊 อนุรักษ์ทะเล</a>
+  <a href="#blog" onclick="document.getElementById('mobile-menu').classList.remove('open')">บทความ</a>
+  <a href="#footer" onclick="document.getElementById('mobile-menu').classList.remove('open')">ติดต่อ</a>
+  <a href="https://lin.ee/8X48Hij" class="btn btn-line" style="margin-top:16px; text-align:center; justify-content:center;" target="_blank">💬 สอบถามทาง LINE</a>
+</div>
+
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content" style="width:100%;">
+    <div class="hero-inner">
+      <!-- Left: copy -->
+      <div>
+        <div class="hero-badge-row">
+          <span class="badge">🏅 SSI Certified Dive School</span>
+          <span class="badge" style="background:var(--color-coral-tint-1); color:#C0442A; border-color:#FFD4C2;">📍 กรุงเทพ + พัทยา</span>
+        </div>
+
+        <h1 class="hero-h1">
+          เรียนดำน้ำ<em>ในกรุงเทพ</em><br>
+          จบ Cert ที่<em>พัทยา</em><br>
+          ไม่ต้องออกเกาะ 🌊
+        </h1>
+
+        <p class="hero-sub">
+          เรียนทฤษฎีและฝึกในสระที่กรุงเทพ ใช้แค่วันหยุดสุดสัปดาห์เดียวที่พัทยา
+          ก็ได้ใบเซอร์ SSI แล้ว — ตารางยืดหยุ่น เหมาะกับคนทำงาน
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#courses" class="btn btn-primary btn-lg">ดูคอร์สทั้งหมด →</a>
+          <a href="https://lin.ee/8X48Hij" class="btn btn-outline btn-lg" target="_blank" rel="noopener">💬 สอบถามทาง LINE</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span style="color:var(--color-teal);">✓</span>
+            SSI Certified School
+          </div>
+          <div class="hero-trust-item">
+            <span style="color:var(--color-teal);">✓</span>
+            ฝึกในสระ กรุงเทพ
+          </div>
+          <div class="hero-trust-item">
+            <span style="color:#F59E0B;">★★★★★</span>
+            Google Reviews
+          </div>
+          <div class="hero-trust-item">
+            <span style="color:var(--color-teal);">✓</span>
+            ครูเซอร์ SSI ทุกคน
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: hero photo -->
+      <div class="hero-bubbles">
+        <div class="hero-photo img-placeholder" style="background-image:url('assets/images/hero-underwater.jpg');background-size:cover;background-position:center;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-wave"></div>
+</section>
+
+
+<!-- ══════════════════════════════
+     HOW IT WORKS
+══════════════════════════════ -->
+<section id="how-it-works" class="section-pad">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">วิธีเรียนกับ Dive Feels</span>
+      <h2 class="section-title">จาก 0 ถึงนักดำน้ำ — ใช้แค่วันหยุดเดียว</h2>
+      <p class="section-sub" style="margin:0 auto;">
+        ไม่ต้องลา ไม่ต้องออกเกาะไกล เรียนในกรุงเทพ แล้วจบใบเซอร์ที่พัทยา
+        ง่ายกว่าที่คิด — เริ่มได้ตั้งแต่วันนี้
+      </p>
+    </div>
+
+    <div class="hiw-steps">
+      <!-- Step 1 -->
+      <div class="hiw-step">
+        <div class="hiw-icon-wrap step-1">📚</div>
+        <div class="hiw-step-num">ขั้นตอนที่ 1</div>
+        <div class="hiw-step-location">กรุงเทพ</div>
+        <h3>ทฤษฎีและวิทยาศาสตร์</h3>
+        <p>เรียนทฤษฎีดำน้ำ ฟิสิกส์ใต้น้ำ และความปลอดภัย<br>
+        เรียนออนไลน์ผ่านแอป SSI หรือ in-class ที่ศูนย์<br>
+        เรียนวันไหนก็ได้ตามสะดวก</p>
+      </div>
+
+      <div class="hiw-arrow">→</div>
+
+      <!-- Step 2 -->
+      <div class="hiw-step">
+        <div class="hiw-icon-wrap step-2">🏊</div>
+        <div class="hiw-step-num">ขั้นตอนที่ 2</div>
+        <div class="hiw-step-location">กรุงเทพ</div>
+        <h3>ฝึกทักษะในสระน้ำ</h3>
+        <p>ฝึกทักษะพื้นฐานในสระที่กรุงเทพ<br>
+        ครูสอนแบบ 1:4 ดูแลทุกคนอย่างใกล้ชิด<br>
+        อุปกรณ์ครบ ไม่ต้องซื้อเอง</p>
+      </div>
+
+      <div class="hiw-arrow">→</div>
+
+      <!-- Step 3 -->
+      <div class="hiw-step">
+        <div class="hiw-icon-wrap step-3">🌊</div>
+        <div class="hiw-step-num">ขั้นตอนที่ 3</div>
+        <div class="hiw-step-location pattaya">พัทยา (1 วันหยุด)</div>
+        <h3>Checkout Dives → ใบเซอร์!</h3>
+        <p>เดินทางพัทยา 1 วันหยุด (2 ชม. จากกรุงเทพ)<br>
+        ดำน้ำ Open Water 4 dives<br>
+        🎓 ได้ใบ SSI Certification ทันที!</p>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:36px;">
+      <div class="hiw-note">
+        🏙️ เรียนในกรุงเทพ ช่วงเย็นหรือวันหยุด &nbsp;·&nbsp; 🚗 พัทยาแค่ 2 ชั่วโมง ไม่ต้องออกเกาะ &nbsp;·&nbsp; 🎓 ได้ใบเซอร์ SSI จริง
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     TRUST STRIP
+══════════════════════════════ -->
+<div id="trust-strip">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item">
+        <div class="trust-item-icon">🏅</div>
+        <div class="trust-item-text">
+          <strong>SSI Certified</strong>
+          <span>Affiliated Dive Center</span>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-item-icon">⭐</div>
+        <div class="trust-item-text">
+          <strong>4.9 / 5.0</strong>
+          <span>Google Reviews</span>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-item-icon">👥</div>
+        <div class="trust-item-text">
+          <strong>500+ นักเรียน</strong>
+          <span>สำเร็จการศึกษา</span>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-item-icon">📍</div>
+        <div class="trust-item-text">
+          <strong>กรุงเทพ + พัทยา</strong>
+          <span>ไม่ต้องออกเกาะ</span>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <div class="trust-item-icon">🤿</div>
+        <div class="trust-item-text">
+          <strong>10+ ปี</strong>
+          <span>ประสบการณ์สอน</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     COURSES
+══════════════════════════════ -->
+<section id="courses" class="section-pad">
+  <div class="container">
+    <div class="courses-header">
+      <div>
+        <span class="section-label">คอร์สเรียนดำน้ำ SSI</span>
+        <h2 class="section-title">เริ่มจากไหนก็ได้ — เราพร้อมสอน</h2>
+        <p class="section-sub">ตั้งแต่ผู้เริ่มต้นจนถึงนักดำน้ำมืออาชีพ ทุกคอร์สสอนในกรุงเทพและจบที่พัทยา</p>
+      </div>
+      <a href="#" class="btn btn-teal">ดูคอร์สทั้งหมด →</a>
+    </div>
+
+    <div class="course-cards">
+
+      <!-- Course 1: Open Water -->
+      <div class="course-card">
+        <div class="course-card-img img-placeholder" style="background-image:url('assets/images/diver-silhouette.jpg');background-size:cover;background-position:center;">
+          <span class="course-card-badge beginner">Beginner</span>
+        </div>
+        <div class="course-card-body">
+          <h3 class="course-card-title">Open Water Diver</h3>
+          <div class="course-card-meta">
+            <span class="course-meta-item">📍 กรุงเทพ + พัทยา</span>
+            <span class="course-meta-item">⏱ 3 วัน</span>
+          </div>
+          <p class="course-card-desc">
+            คอร์สเริ่มต้นสำหรับผู้ไม่เคยดำน้ำ เรียนทฤษฎีและฝึกในสระที่กรุงเทพ
+            จบ checkout dives ที่พัทยา รับใบเซอร์ SSI ดำน้ำได้ทั่วโลก
+          </p>
+          <div class="course-card-footer">
+            <div class="course-price">ติดต่อสอบถาม<br><span>ราคาพิเศษสำหรับกลุ่ม</span></div>
+            <a href="#" class="btn btn-primary btn-sm">ดูรายละเอียด</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 2: Advanced OW -->
+      <div class="course-card">
+        <div class="course-card-img img-placeholder" style="background-image:url('assets/images/coral-reef.jpg');background-size:cover;background-position:center;">
+          <span class="course-card-badge specialty">Advanced</span>
+        </div>
+        <div class="course-card-body">
+          <h3 class="course-card-title">Advanced Open Water</h3>
+          <div class="course-card-meta">
+            <span class="course-meta-item">📍 กรุงเทพ + พัทยา</span>
+            <span class="course-meta-item">⏱ 2–3 วัน</span>
+          </div>
+          <p class="course-card-desc">
+            ต่อยอดจาก Open Water ฝึกทักษะ Deep Dive, Navigation, Buoyancy
+            และ Specialty อีก 3 ทักษะตามที่เลือก ดำน้ำได้ลึกถึง 30 เมตร
+          </p>
+          <div class="course-card-footer">
+            <div class="course-price">ติดต่อสอบถาม<br><span>รับกลุ่มทุกขนาด</span></div>
+            <a href="#" class="btn btn-primary btn-sm">ดูรายละเอียด</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 3: Nitrox -->
+      <div class="course-card">
+        <div class="course-card-img img-placeholder" style="background-image:url('assets/images/fish-school.jpg');background-size:cover;background-position:center;">
+          <span class="course-card-badge specialty">Specialty</span>
+        </div>
+        <div class="course-card-body">
+          <h3 class="course-card-title">Nitrox / EANx Diver</h3>
+          <div class="course-card-meta">
+            <span class="course-meta-item">📍 กรุงเทพ</span>
+            <span class="course-meta-item">⏱ 1 วัน</span>
+          </div>
+          <p class="course-card-desc">
+            เรียนใช้แก๊ส Nitrox เพื่อเพิ่ม bottom time และลด fatigue
+            เรียน + สอบได้ในวันเดียวที่กรุงเทพ ไม่ต้องไปทะเล
+          </p>
+          <div class="course-card-footer">
+            <div class="course-price">ติดต่อสอบถาม<br><span>เหมาะกับดำทริป</span></div>
+            <a href="#" class="btn btn-primary btn-sm">ดูรายละเอียด</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course 4: Trip Refresher -->
+      <div class="course-card">
+        <div class="course-card-img img-placeholder" style="background-image:url('assets/images/pool-training.jpg');background-size:cover;background-position:center;">
+          <span class="course-card-badge refresher">Trip Add-on</span>
+        </div>
+        <div class="course-card-body">
+          <h3 class="course-card-title">Pool Refresher — เตรียมพร้อมก่อนทริป</h3>
+          <div class="course-card-meta">
+            <span class="course-meta-item">📍 กรุงเทพ</span>
+            <span class="course-meta-item">⏱ ครึ่งวัน</span>
+          </div>
+          <p class="course-card-desc">
+            หยุดดำน้ำมานาน? ทบทวนทักษะในสระก่อนไปทริป กลับมาดำได้อย่างมั่นใจ
+            ราคาพิเศษสำหรับลูกค้าที่จองทริปกับเรา
+          </p>
+          <div class="course-card-footer">
+            <div class="course-price">ราคาพิเศษ<br><span>สำหรับลูกค้าทริป</span></div>
+            <a href="#" class="btn btn-primary btn-sm">ดูรายละเอียด</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Course Comparison note -->
+    <div style="text-align:center; margin-top:36px; padding:20px; background:var(--color-teal-tint-1); border-radius:var(--radius-lg); border:1px solid var(--color-teal-tint-2);">
+      <p style="font-size:.95rem; color:var(--color-navy-ocean);">
+        ไม่แน่ใจว่าคอร์สไหนเหมาะกับคุณ?
+        <a href="https://lin.ee/8X48Hij" style="color:var(--color-teal); font-weight:700;" target="_blank">
+          💬 ทักทาง LINE เลย — ตอบภายใน 1 ชั่วโมง
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     WHY DIVE FEELS
+══════════════════════════════ -->
+<section id="why" class="section-pad">
+  <div class="container">
+    <div class="why-grid">
+      <!-- Left: image -->
+      <div class="why-image img-placeholder" style="background-image:url('assets/images/scuba-students.jpg');background-size:cover;background-position:center;"></div>
+
+      <!-- Right: content -->
+      <div>
+        <span class="section-label">ทำไมต้อง Dive Feels?</span>
+        <h2 class="section-title">เรียนดำน้ำที่นี่ แตกต่างยังไง?</h2>
+        <p style="color:var(--color-text-muted); margin-bottom:8px;">
+          เราไม่ใช่แค่สอนให้ดำน้ำได้ — เราสอนให้คุณดำน้ำได้ดีและปลอดภัย
+          ด้วยมาตรฐาน SSI และครูที่ใส่ใจทุกคน
+        </p>
+
+        <div class="why-points">
+          <div class="why-point">
+            <div class="why-point-icon">🏙️</div>
+            <div class="why-point-text">
+              <h4>เรียนได้ในกรุงเทพ — ไม่ต้องออกเกาะ</h4>
+              <p>เรียนทฤษฎีและฝึกสระที่กรุงเทพ ใช้แค่ 1 วันหยุดที่พัทยา
+              เหมาะกับคนทำงานที่ไม่มีเวลาเดินทางไกล</p>
+            </div>
+          </div>
+
+          <div class="why-point">
+            <div class="why-point-icon">🔬</div>
+            <div class="why-point-text">
+              <h4>ปูพื้นฐานฟิสิกส์อย่างจริงจัง</h4>
+              <p>เรียนรู้ว่า "ทำไม" ไม่ใช่แค่ "ทำอะไร" ทำให้ดำน้ำได้อย่างเข้าใจ
+              ปลอดภัย และก้าวหน้าต่อได้</p>
+            </div>
+          </div>
+
+          <div class="why-point">
+            <div class="why-point-icon">👨‍🏫</div>
+            <div class="why-point-text">
+              <h4>อัตราครูต่อนักเรียนน้อย</h4>
+              <p>ดูแลทุกคนอย่างใกล้ชิด ไม่ปล่อยให้ผ่านไปถ้ายังไม่พร้อม
+              เพราะความปลอดภัยสำคัญกว่า</p>
+            </div>
+          </div>
+
+          <div class="why-point">
+            <div class="why-point-icon">📅</div>
+            <div class="why-point-text">
+              <h4>ตารางยืดหยุ่น เหมาะคนทำงาน</h4>
+              <p>จัดตารางตามนักเรียน เรียนช่วงเย็นหรือวันหยุดได้
+              ไม่ต้องลางาน ไม่ต้องรีบ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     DESTINATIONS
+══════════════════════════════ -->
+<section id="destinations" class="section-pad">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:40px;">
+      <span class="section-label">สถานที่ดำน้ำ</span>
+      <h2 class="section-title">ดำน้ำที่ไหนดี? แรงบันดาลใจจาก Dive Feels</h2>
+      <p class="section-sub" style="margin:0 auto;">
+        จากพัทยาใกล้บ้าน สู่ liveaboard สิมิลัน และทริปนานาชาติ
+        ทุกจุดหมายมีเรื่องราวรอให้ค้นพบ
+      </p>
+    </div>
+
+    <div class="dest-grid">
+      <!-- Thailand -->
+      <div class="dest-card">
+        <div class="dest-img img-placeholder" style="background-image:url('assets/images/tropical-beach.jpg');background-size:cover;background-position:center;"></div>
+        <div class="dest-overlay">
+          <span style="color:#fff; font-weight:700; font-family:var(--font-heading);">ดูรายละเอียด →</span>
+        </div>
+        <div class="dest-info">
+          <div class="dest-region">ไทย</div>
+          <div class="dest-name">พัทยา / เกาะล้าน</div>
+          <div class="dest-tagline">จุด checkout dive ของเรา — ทะเลสวย ใกล้กรุงเทพ</div>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-img img-placeholder" style="background-image:url('assets/images/coral-reef.jpg');background-size:cover;background-position:center;"></div>
+        <div class="dest-overlay">
+          <span style="color:#fff; font-weight:700; font-family:var(--font-heading);">ดูรายละเอียด →</span>
+        </div>
+        <div class="dest-info">
+          <div class="dest-region">ไทย</div>
+          <div class="dest-name">สิมิลัน / อันดามันเหนือ</div>
+          <div class="dest-tagline">อุทยานแห่งชาติ ทัศนวิสัยใสกระจ่าง โลกใต้น้ำงดงาม</div>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-img img-placeholder" style="background-image:url('assets/images/dive-boat.jpg');background-size:cover;background-position:center;"></div>
+        <div class="dest-overlay">
+          <span style="color:#fff; font-weight:700; font-family:var(--font-heading);">ดูรายละเอียด →</span>
+        </div>
+        <div class="dest-info">
+          <div class="dest-region">ไทย</div>
+          <div class="dest-name">เกาะช้าง / หินเพิง ระยอง</div>
+          <div class="dest-tagline">ใกล้กรุงเทพ เหมาะทำ fun dives วันหยุดสุดสัปดาห์</div>
+        </div>
+      </div>
+
+      <!-- International -->
+      <div class="dest-card">
+        <div class="dest-img img-placeholder" style="background-image:url('assets/images/fish-school.jpg');background-size:cover;background-position:center;"></div>
+        <div class="dest-overlay">
+          <span style="color:#fff; font-weight:700; font-family:var(--font-heading);">ดูรายละเอียด →</span>
+        </div>
+        <div class="dest-info">
+          <div class="dest-region">อินโดนีเซีย</div>
+          <div class="dest-name">Raja Ampat</div>
+          <div class="dest-tagline">ความหลากหลายทางทะเลอันดับ 1 ของโลก ชีวิตใต้น้ำอุดมสมบูรณ์</div>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-img img-placeholder" style="background-image:url('assets/images/diver-silhouette.jpg');background-size:cover;background-position:center;"></div>
+        <div class="dest-overlay">
+          <span style="color:#fff; font-weight:700; font-family:var(--font-heading);">ดูรายละเอียด →</span>
+        </div>
+        <div class="dest-info">
+          <div class="dest-region">ฟิลิปปินส์</div>
+          <div class="dest-name">Malapascua</div>
+          <div class="dest-tagline">บ้านของ Thresher Shark สุดยอดประสบการณ์ดำน้ำลึก</div>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-img img-placeholder" style="background-image:url('assets/images/hero-underwater.jpg');background-size:cover;background-position:top center;"></div>
+        <div class="dest-overlay">
+          <span style="color:#fff; font-weight:700; font-family:var(--font-heading);">ดูรายละเอียด →</span>
+        </div>
+        <div class="dest-info">
+          <div class="dest-region">มัลดีฟส์</div>
+          <div class="dest-name">Maldives Liveaboard</div>
+          <div class="dest-tagline">Hammerhead, Whale Shark, Manta — ดำน้ำในฝัน</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:36px;">
+      <a href="#" class="btn btn-teal">ดูสถานที่ทั้งหมด →</a>
+      <p style="margin-top:14px; font-size:.875rem; color:var(--color-text-muted);">
+        สนใจทริปไปจุดไหน?
+        <a href="https://lin.ee/8X48Hij" style="color:var(--color-teal); font-weight:600;" target="_blank">สอบถามทาง LINE ได้เลย</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     LIVE-ABOARD TRIPS
+══════════════════════════════ -->
+<section id="trips" class="section-pad" style="background:var(--color-navy-deep);">
+  <div class="container">
+    <div class="trips-header">
+      <span class="section-label" style="color:var(--color-teal);">ทริปดำน้ำกับ Dive Feels</span>
+      <h2 class="section-title text-white">~15 ทริปต่อปี — คัดสรรโดยทีมครู</h2>
+      <p class="section-sub text-white" style="margin:0 auto; opacity:.75;">
+        ทริป Local, Liveaboard อันดามัน และทริปนานาชาติ
+        ดีไซน์โดยครูผู้เชี่ยวชาญ ปลอดภัยและสนุก
+      </p>
+    </div>
+
+    <div class="trips-grid">
+      <!-- Trip 1 -->
+      <div class="trip-card">
+        <div class="trip-img img-placeholder" style="position:absolute; inset:0; height:auto; background-image:url('assets/images/tropical-beach.jpg');background-size:cover;background-position:center;"></div>
+        <div class="trip-gradient"></div>
+        <div class="trip-info">
+          <div class="trip-region">ทริปในประเทศ</div>
+          <div class="trip-name">Fun Dives พัทยา / เกาะล้าน</div>
+          <div class="trip-tagline">เหมาะมือใหม่จบคอร์ส ทำ Fun Dives ครั้งแรก</div>
+        </div>
+      </div>
+
+      <!-- Trip 2 -->
+      <div class="trip-card">
+        <div class="trip-img img-placeholder" style="position:absolute; inset:0; height:auto; background-image:url('assets/images/coral-reef.jpg');background-size:cover;background-position:center;"></div>
+        <div class="trip-gradient"></div>
+        <div class="trip-info">
+          <div class="trip-region">Liveaboard ไทย</div>
+          <div class="trip-name">อันดามันเหนือ / สิมิลัน</div>
+          <div class="trip-tagline">5 วัน 4 คืน บนเรือ ดำน้ำ 12–14 dives</div>
+        </div>
+      </div>
+
+      <!-- Trip 3 -->
+      <div class="trip-card">
+        <div class="trip-img img-placeholder" style="position:absolute; inset:0; height:auto; background-image:url('assets/images/fish-school.jpg');background-size:cover;background-position:center;"></div>
+        <div class="trip-gradient"></div>
+        <div class="trip-info">
+          <div class="trip-region">ทริปต่างประเทศ</div>
+          <div class="trip-name">Raja Ampat / Maldives</div>
+          <div class="trip-tagline">ทริปในฝัน — สำหรับนักดำน้ำที่พร้อมแล้ว</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:44px;">
+      <p style="color:rgba(255,255,255,.65); margin-bottom:20px; font-size:.95rem;">
+        ตารางและราคาทริป — สอบถามโดยตรงทาง LINE / Facebook<br>
+        เปิดรับสมัครทริปใหม่ตลอดปี ประมาณ 15 ทริป/ปี
+      </p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://lin.ee/8X48Hij" class="btn btn-line btn-lg" target="_blank" rel="noopener">💬 สอบถามทริปทาง LINE</a>
+        <a href="https://www.facebook.com/divefeels" class="btn btn-outline btn-lg" target="_blank" rel="noopener">📘 Facebook Page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     INSTRUCTORS
+══════════════════════════════ -->
+<section id="instructors" class="section-pad">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:40px;">
+      <span class="section-label">ทีมผู้สอน</span>
+      <h2 class="section-title">SSI Certified Instructors</h2>
+      <p class="section-sub" style="margin:0 auto;">
+        ครูทุกคนได้รับการรับรองจาก SSI มีประสบการณ์จริง และพร้อมดูแลคุณตั้งแต่ก้าวแรก
+      </p>
+    </div>
+
+    <div class="instructor-cards">
+      <div class="instructor-card">
+        <div class="instructor-photo img-placeholder">
+          <div style="position:relative;z-index:1;font-size:2rem;">👤</div>
+        </div>
+        <div class="instructor-name">อาจารย์ [ชื่อ]</div>
+        <div class="instructor-cert">SSI Instructor · 500+ dives</div>
+        <p class="instructor-bio">ประสบการณ์สอนกว่า X ปี เชี่ยวชาญ Open Water และ Specialty courses ดำน้ำทั่วเอเชีย</p>
+        <div class="instructor-langs">
+          <span class="lang-tag">ภาษาไทย</span>
+          <span class="lang-tag">English</span>
+        </div>
+      </div>
+
+      <div class="instructor-card">
+        <div class="instructor-photo img-placeholder">
+          <div style="position:relative;z-index:1;font-size:2rem;">👤</div>
+        </div>
+        <div class="instructor-name">อาจารย์ [ชื่อ]</div>
+        <div class="instructor-cert">SSI Instructor · 800+ dives</div>
+        <p class="instructor-bio">เชี่ยวชาญ Advanced และ Rescue courses ประสบการณ์ liveaboard ทั้งในและต่างประเทศ</p>
+        <div class="instructor-langs">
+          <span class="lang-tag">ภาษาไทย</span>
+          <span class="lang-tag">English</span>
+        </div>
+      </div>
+
+      <div class="instructor-card">
+        <div class="instructor-photo img-placeholder">
+          <div style="position:relative;z-index:1;font-size:2rem;">👤</div>
+        </div>
+        <div class="instructor-name">อาจารย์ [ชื่อ]</div>
+        <div class="instructor-cert">SSI Divemaster · 300+ dives</div>
+        <p class="instructor-bio">ดูแลนักเรียนมือใหม่เป็นพิเศษ ใจเย็น อธิบายเป็นขั้นตอน ไม่ทิ้งใครไว้ข้างหลัง</p>
+        <div class="instructor-langs">
+          <span class="lang-tag">ภาษาไทย</span>
+        </div>
+      </div>
+
+      <div class="instructor-card">
+        <div class="instructor-photo img-placeholder">
+          <div style="position:relative;z-index:1;font-size:2rem;">👤</div>
+        </div>
+        <div class="instructor-name">อาจารย์ [ชื่อ]</div>
+        <div class="instructor-cert">SSI Instructor · 600+ dives</div>
+        <p class="instructor-bio">ผู้เชี่ยวชาญ Nitrox, Buoyancy และ Technical diving เน้นสอนให้เข้าใจฟิสิกส์จริงๆ</p>
+        <div class="instructor-langs">
+          <span class="lang-tag">ภาษาไทย</span>
+          <span class="lang-tag">English</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:32px;">
+      <a href="#" class="btn btn-teal">ดูทีมทั้งหมด →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     REVIEWS
+══════════════════════════════ -->
+<section id="reviews" class="section-pad">
+  <div class="container">
+    <div class="reviews-header">
+      <span class="section-label">รีวิวจากนักเรียน</span>
+      <div class="overall-rating">4.9</div>
+      <div class="stars">★★★★★</div>
+      <p style="color:var(--color-text-muted); margin-top:8px; font-size:.875rem;">จาก Google Reviews · 50+ รีวิว</p>
+    </div>
+
+    <div class="review-cards">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "เรียนกับ Dive Feels ดีมากค่ะ ครูอธิบายละเอียด อดทน ไม่กดดัน
+          เริ่มต้นจากไม่รู้อะไรเลย จนได้ใบเซอร์ SSI ภายใน 3 วัน
+          ชอบที่เรียนกรุงเทพได้ ไม่ต้องเดินทางไกล"
+        </p>
+        <div class="review-author">
+          <div class="review-avatar">😊</div>
+          <div>
+            <div class="review-name">คุณ [ชื่อนักเรียน]</div>
+            <div class="review-via">Open Water Diver · via Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "ไปทริปสิมิลันกับ Dive Feels ครั้งแรก ประทับใจมากครับ
+          ครูดูแลดี ทีมงานเป็นกันเอง บรรยากาศสนุก
+          ใครอยากไปทริปดำน้ำแบบมืออาชีพ แนะนำเลย"
+        </p>
+        <div class="review-author">
+          <div class="review-avatar">🤿</div>
+          <div>
+            <div class="review-name">คุณ [ชื่อนักเรียน]</div>
+            <div class="review-via">Liveaboard Trip · via Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "หยุดดำน้ำไป 2 ปี ทำ pool refresher ก่อนทริปแล้วกลับมาดำได้เลย
+          ราคาคุ้มมาก ครูใจดี remind ทักษะสำคัญครบ
+          จะมาเรียน Advanced ต่อแน่นอน"
+        </p>
+        <div class="review-author">
+          <div class="review-avatar">🌊</div>
+          <div>
+            <div class="review-name">คุณ [ชื่อนักเรียน]</div>
+            <div class="review-via">Pool Refresher · via Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:32px;">
+      <a href="#" class="btn btn-teal" target="_blank" rel="noopener">อ่านรีวิวทั้งหมดบน Google →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     BLOG
+══════════════════════════════ -->
+<section id="blog" class="section-pad">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="section-label">บทความดำน้ำ</span>
+        <h2 class="section-title">อ่านก่อนตัดสินใจ</h2>
+        <p class="section-sub">ข้อมูลดีๆ สำหรับทุกระดับ ตั้งแต่มือใหม่จนถึงนักดำน้ำ</p>
+      </div>
+      <a href="#" class="btn btn-teal">อ่านบทความทั้งหมด →</a>
+    </div>
+
+    <div class="blog-cards">
+      <!-- Blog 1: Persona 1 — Beginner -->
+      <div class="blog-card">
+        <div class="blog-img img-placeholder" style="background-image:url('assets/images/pool-training.jpg');background-size:cover;background-position:center;"></div>
+        <div class="blog-body">
+          <span class="blog-tag">มือใหม่</span>
+          <h3 class="blog-title">เรียนดำน้ำกรุงเทพ — ต้องเตรียมตัวอย่างไร? (ฉบับสมบูรณ์)</h3>
+          <p class="blog-excerpt">ก่อนเรียน Open Water ต้องรู้อะไรบ้าง? เตรียมร่างกาย เตรียมใจ และเตรียมเอกสาร ไม่มีอะไรน่ากลัวอย่างที่คิด</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="blog-meta">พ.ค. 2026 · 5 min read</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog 2: SSI vs PADI -->
+      <div class="blog-card">
+        <div class="blog-img img-placeholder" style="background-image:url('assets/images/diver-silhouette.jpg');background-size:cover;background-position:center;"></div>
+        <div class="blog-body">
+          <span class="blog-tag navy">SSI vs PADI</span>
+          <h3 class="blog-title">SSI กับ PADI ต่างกันยังไง? เลือกอันไหนดีกว่ากัน</h3>
+          <p class="blog-excerpt">คำถามยอดฮิตสำหรับมือใหม่ ใบเซอร์ทั้งสองได้รับการยอมรับระดับโลก แต่มีความแตกต่างที่น่าสนใจ</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="blog-meta">เม.ย. 2026 · 7 min read</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog 3: Trip Seeker / Nitrox -->
+      <div class="blog-card">
+        <div class="blog-img img-placeholder" style="background-image:url('assets/images/dive-boat.jpg');background-size:cover;background-position:center;"></div>
+        <div class="blog-body">
+          <span class="blog-tag coral">Nitrox</span>
+          <h3 class="blog-title">Nitrox คืออะไร? ทำไมนักดำน้ำที่ไปทริปต้องรู้จัก</h3>
+          <p class="blog-excerpt">Nitrox ช่วยเพิ่ม bottom time ลด fatigue และปลอดภัยขึ้นสำหรับการดำน้ำหลาย dive ต่อวัน — จำเป็นสำหรับ liveaboard</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="blog-meta">มี.ค. 2026 · 6 min read</span>
+            <a href="#" class="blog-read-more">อ่านต่อ →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     CONSERVATION EVENTS
+══════════════════════════════ -->
+<section id="conservation" class="section-pad" style="background: var(--color-teal-tint-1); border-top: 3px solid var(--color-teal-tint-2);">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="section-label" style="color:var(--color-teal);">🌊 กิจกรรมเพื่อทะเล</span>
+        <h2 class="section-title">ดำน้ำดี ดูแลทะเลด้วย</h2>
+        <p class="section-sub">Dive Feels เชื่อว่าการดำน้ำที่ดีคือการดำน้ำที่รับผิดชอบ
+        ร่วมกิจกรรมอนุรักษ์ทะเลกับเรา — เพราะทะเลสวยเป็นของทุกคน</p>
+      </div>
+      <a href="#" class="btn btn-teal">ดูกิจกรรมทั้งหมด →</a>
+    </div>
+
+    <div class="grid-3" style="gap:24px;">
+
+      <!-- Card 1: Ocean Cleanup -->
+      <div style="background:var(--color-white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform var(--transition-base), box-shadow var(--transition-base);"
+           onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(28,43,58,.12)'"
+           onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+        <div class="img-placeholder" style="height:180px;background-image:url('assets/images/ocean-cleanup.jpg');background-size:cover;background-position:center;"></div>
+        <div style="padding:22px;">
+          <div style="display:inline-flex; align-items:center; gap:6px; background:#E8F5E9; color:#2E7D32; font-size:.75rem; font-weight:700; font-family:var(--font-heading); letter-spacing:.06em; text-transform:uppercase; padding:4px 12px; border-radius:var(--radius-full); margin-bottom:14px;">
+            🌱 กำลังจะมาถึง
+          </div>
+          <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:8px; font-family:var(--font-heading);">Ocean Cleanup — เก็บขยะใต้ทะเล</h3>
+          <p style="font-size:.875rem; color:var(--color-text-muted); line-height:1.7; margin-bottom:16px;">
+            ร่วมมือกันดำน้ำเก็บขยะในจุดที่เราดำน้ำประจำ พัทยาและอ่าวไทย
+            เปิดรับทั้งนักดำน้ำมีใบเซอร์ทุกระดับ มาด้วยกัน ทำด้วยกัน
+          </p>
+          <div style="display:flex; gap:16px; margin-bottom:16px; flex-wrap:wrap;">
+            <span style="font-size:.8rem; color:var(--color-text-muted); display:flex; align-items:center; gap:4px;">📅 ทุกไตรมาส</span>
+            <span style="font-size:.8rem; color:var(--color-text-muted); display:flex; align-items:center; gap:4px;">📍 พัทยา / อ่าวไทย</span>
+            <span style="font-size:.8rem; color:var(--color-text-muted); display:flex; align-items:center; gap:4px;">👥 เปิดรับ ~20 คน</span>
+          </div>
+          <a href="https://lin.ee/8X48Hij" class="btn btn-primary btn-sm" target="_blank" rel="noopener" style="width:100%; justify-content:center;">ลงชื่อสมัครรอบถัดไป →</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Marine Life Guidelines -->
+      <div style="background:var(--color-white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform var(--transition-base), box-shadow var(--transition-base);"
+           onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(28,43,58,.12)'"
+           onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+        <div class="img-placeholder" style="height:180px;background-image:url('assets/images/coral-reef.jpg');background-size:cover;background-position:center;"></div>
+        <div style="padding:22px;">
+          <div style="display:inline-flex; align-items:center; gap:6px; background:var(--color-teal-tint-1); color:var(--color-navy-ocean); font-size:.75rem; font-weight:700; font-family:var(--font-heading); letter-spacing:.06em; text-transform:uppercase; padding:4px 12px; border-radius:var(--radius-full); margin-bottom:14px;">
+            📖 คู่มือดำน้ำ
+          </div>
+          <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:8px; font-family:var(--font-heading);">Marine Life Guidelines — ดำน้ำอย่างเป็นมิตรต่อทะเล</h3>
+          <p style="font-size:.875rem; color:var(--color-text-muted); line-height:1.7; margin-bottom:16px;">
+            แนวทางปฏิบัติสำหรับนักดำน้ำที่รักทะเล: ไม่แตะปะการัง ไม่รบกวนสัตว์น้ำ
+            ดำน้ำอย่าง Neutral Buoyancy สมบูรณ์แบบ เพื่อให้ทะเลยังสวยงามไปอีกนาน
+          </p>
+          <div style="display:flex; gap:16px; margin-bottom:16px; flex-wrap:wrap;">
+            <span style="font-size:.8rem; color:var(--color-text-muted);">📄 PDF ดาวน์โหลดฟรี</span>
+            <span style="font-size:.8rem; color:var(--color-text-muted);">🌐 ภาษาไทย + EN</span>
+          </div>
+          <a href="#" class="btn btn-teal btn-sm" style="width:100%; justify-content:center;">ดาวน์โหลดคู่มือฟรี →</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Blue Ocean Program -->
+      <div style="background:var(--color-navy-deep); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform var(--transition-base), box-shadow var(--transition-base);"
+           onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 24px rgba(28,43,58,.2)'"
+           onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+        <div class="img-placeholder" style="height:180px;background-image:url('assets/images/fish-school.jpg');background-size:cover;background-position:center;"></div>
+        <div style="padding:22px;">
+          <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(91,168,184,.2); color:var(--color-teal); font-size:.75rem; font-weight:700; font-family:var(--font-heading); letter-spacing:.06em; text-transform:uppercase; padding:4px 12px; border-radius:var(--radius-full); margin-bottom:14px;">
+            💙 โปรแกรมอนุรักษ์
+          </div>
+          <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:8px; font-family:var(--font-heading); color:#fff;">Blue Ocean Program</h3>
+          <p style="font-size:.875rem; color:rgba(255,255,255,.7); line-height:1.7; margin-bottom:16px;">
+            โปรแกรมอนุรักษ์ระบบนิเวศทางทะเลระยะยาว ร่วมกับชุมชนและองค์กรพันธมิตร
+            เพื่อฟื้นฟูและปกป้องแนวปะการังในพื้นที่ที่เราดำน้ำ
+          </p>
+          <div style="display:flex; gap:16px; margin-bottom:16px; flex-wrap:wrap;">
+            <span style="font-size:.8rem; color:rgba(255,255,255,.5);">🤝 Community Program</span>
+            <span style="font-size:.8rem; color:rgba(255,255,255,.5);">📅 ตลอดปี</span>
+          </div>
+          <a href="https://lin.ee/8X48Hij" class="btn btn-outline btn-sm" target="_blank" rel="noopener" style="width:100%; justify-content:center; border-color:var(--color-teal); color:var(--color-teal);">เรียนรู้และเข้าร่วม →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div style="text-align:center; margin-top:40px; padding:28px; background:var(--color-white); border-radius:var(--radius-lg); border:1px solid var(--color-teal-tint-2);">
+      <p style="font-size:1rem; font-weight:600; color:var(--color-navy-deep); margin-bottom:6px; font-family:var(--font-heading);">
+        อยากร่วมกิจกรรมอนุรักษ์ทะเลกับเรา?
+      </p>
+      <p style="font-size:.875rem; color:var(--color-text-muted); margin-bottom:16px;">
+        ติดตามข่าวสารกิจกรรมใหม่ผ่าน Facebook และ LINE OA — สมัครรอบถัดไปได้เลย
+      </p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://lin.ee/8X48Hij" class="btn btn-line btn-sm" target="_blank" rel="noopener">💬 ติดตามทาง LINE</a>
+        <a href="https://www.facebook.com/divefeels" class="btn btn-sm" target="_blank" rel="noopener" style="background:#1877F2; color:#fff; border-color:#1877F2;">📘 ติดตาม Facebook</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     LINE CTA BANNER
+══════════════════════════════ -->
+<section id="cta-banner">
+  <div class="container">
+    <div class="cta-banner-inner">
+      <div class="cta-banner-text">
+        <h2 class="cta-banner-title">พร้อมจะดำน้ำครั้งแรกแล้วหรือยัง? 🤿</h2>
+        <p class="cta-banner-sub">
+          สงสัยเรื่องคอร์ส อยากรู้ว่าเหมาะกับคุณไหม?<br>
+          ทักทาง LINE ได้เลย — ตอบภายใน 1 ชั่วโมง ไม่มีค่าใช้จ่าย
+        </p>
+        <div class="cta-banner-actions">
+          <a href="https://lin.ee/8X48Hij" class="btn btn-line btn-lg" target="_blank" rel="noopener">💬 LINE OA — ทักเลย</a>
+          <a href="#courses" class="btn btn-outline btn-lg">ดูคอร์สก่อน</a>
+        </div>
+      </div>
+
+      <div class="cta-qr">
+        <div class="cta-qr-box">📱</div>
+        <div class="cta-qr-label">สแกน QR<br>เพิ่มเพื่อน LINE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <div class="footer-logo">🤿 Dive <span>Feels</span></div>
+        <p class="footer-tagline">
+          SSI Certified Dive School<br>
+          เรียนดำน้ำในกรุงเทพ จบ Cert ที่พัทยา<br>
+          ไม่ต้องออกเกาะ — เริ่มได้ทุกวันหยุด
+        </p>
+        <div class="footer-contact">
+          <p>
+            📍 [ที่อยู่ กรุงเทพมหานคร]<br>
+            📞 <a href="tel:+66XXXXXXXXXX">+66 XX-XXXX-XXXX</a><br>
+            ✉️ <a href="mailto:hello@divefeels.com">hello@divefeels.com</a><br>
+            💬 <a href="https://lin.ee/8X48Hij" target="_blank" rel="noopener">LINE OA: @divefeels</a>
+          </p>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/divefeels" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="https://www.instagram.com/divefeels" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">ig</a>
+          <a href="https://lin.ee/8X48Hij" aria-label="LINE OA" title="LINE OA" target="_blank" rel="noopener">L</a>
+        </div>
+      </div>
+
+      <!-- Col 2: Courses -->
+      <div class="footer-col">
+        <h4>คอร์สเรียน</h4>
+        <ul>
+          <li><a href="#">Try Scuba / ทดลองดำน้ำ</a></li>
+          <li><a href="#">Open Water Diver</a></li>
+          <li><a href="#">Advanced Open Water</a></li>
+          <li><a href="#">Nitrox / EANx</a></li>
+          <li><a href="#">Rescue Diver</a></li>
+          <li><a href="#">Divemaster</a></li>
+          <li><a href="#">Pool Refresher</a></li>
+          <li><a href="#">ดูคอร์สทั้งหมด →</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Explore -->
+      <div class="footer-col">
+        <h4>สำรวจ</h4>
+        <ul>
+          <li><a href="#">สถานที่ดำน้ำ</a></li>
+          <li><a href="#">ทริป Liveaboard</a></li>
+          <li><a href="#">ทริปต่างประเทศ</a></li>
+          <li><a href="#conservation">🌊 Ocean Cleanup</a></li>
+          <li><a href="#conservation">Marine Life Guidelines</a></li>
+          <li><a href="#conservation">Blue Ocean Program</a></li>
+          <li><a href="#">บทความ / Blog</a></li>
+          <li><a href="#">FAQ คำถามที่พบบ่อย</a></li>
+          <li><a href="#">เกี่ยวกับเรา</a></li>
+          <li><a href="#">ทีมครูผู้สอน</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact -->
+      <div class="footer-col">
+        <h4>ติดต่อ</h4>
+        <ul>
+          <li><a href="https://lin.ee/8X48Hij" target="_blank">💬 LINE OA</a></li>
+          <li><a href="https://www.facebook.com/divefeels" target="_blank" rel="noopener">📘 Facebook</a></li>
+          <li><a href="https://www.instagram.com/divefeels" target="_blank" rel="noopener">📸 Instagram</a></li>
+          <li><a href="#">📍 แผนที่ Google Maps</a></li>
+          <li><a href="#">📞 โทรหาเรา</a></li>
+        </ul>
+        <div style="margin-top:16px;">
+          <a href="https://lin.ee/8X48Hij" class="btn btn-line btn-sm" target="_blank" rel="noopener" style="width:100%; justify-content:center;">💬 ทักทาง LINE</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Dive Feels · SSI Affiliated Dive Center · All rights reserved</div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+        <a href="#">นโยบายความเป็นส่วนตัว</a>
+        <a href="#">เงื่อนไขการใช้งาน</a>
+        <a href="#">นโยบายการยกเลิก</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════
+     STICKY LINE BUTTON
+══════════════════════════════ -->
+<div id="sticky-line">
+  <a href="https://lin.ee/8X48Hij" class="sticky-line-btn" target="_blank" rel="noopener" aria-label="ติดต่อทาง LINE OA">
+    <span class="sticky-line-icon">💬</span>
+    <span>LINE OA</span>
+  </a>
+</div>
+
+
+<!-- ══════════════════════════════
+     JAVASCRIPT (minimal)
+══════════════════════════════ -->
+<script>
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.querySelector('.nav-hamburger');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Nav background on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(28,43,58,0.97)';
+      nav.style.backdropFilter = 'blur(12px)';
+    } else {
+      nav.style.background = 'var(--color-navy-deep)';
+      nav.style.backdropFilter = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

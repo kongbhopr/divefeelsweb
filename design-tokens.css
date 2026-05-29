@@ -1,0 +1,104 @@
+/* ============================================================
+   Dive Feels — Design Tokens
+   Final Brand Direction: SSI Heritage, Calm & Friendly
+   Generated: 2026-05-28
+   ============================================================ */
+
+:root {
+
+  /* ── Primary Palette ─────────────────────────────────── */
+  --color-navy-deep:    #1C2B3A;   /* nav, headings, dark text */
+  --color-navy-ocean:   #2E4A6A;   /* hero bg, dark sections   */
+  --color-teal:         #5BA8B8;   /* accent, badges, links    */
+  --color-red:          #E31837;   /* CTA buttons only (SSI)   */
+  --color-coral:        #FF9B7A;   /* warm accent, highlights  */
+
+  /* ── Neutrals ────────────────────────────────────────── */
+  --color-bg:           #FFF6F0;   /* page background (warm)   */
+  --color-white:        #FFFFFF;   /* card background          */
+  --color-surface:      #F5EDE8;   /* subtle card tint         */
+  --color-border:       #E8DDD8;   /* dividers, card borders   */
+
+  /* ── Text ────────────────────────────────────────────── */
+  --color-text-primary:   #1C2B3A; /* headings                 */
+  --color-text-body:      #3D4F5C; /* body copy                */
+  --color-text-muted:     #7A8C99; /* captions, labels         */
+  --color-text-on-dark:   #FFFFFF; /* text on navy/teal bg     */
+  --color-text-on-red:    #FFFFFF; /* text on CTA button       */
+
+  /* ── Interactive ─────────────────────────────────────── */
+  --color-cta:            #E31837;
+  --color-cta-hover:      #C4142E;
+  --color-cta-active:     #A81027;
+  --color-link:           #5BA8B8;
+  --color-link-hover:     #4A8F9E;
+  --color-focus-ring:     #5BA8B8;
+
+  /* ── Semantic ────────────────────────────────────────── */
+  --color-success:        #22C55E;
+  --color-warning:        #F59E0B;
+  --color-info:           #5BA8B8;
+
+  /* ── Tints (for backgrounds, badges, hover states) ───── */
+  --color-teal-tint-1:    #EAF5F7;  /* very light teal bg     */
+  --color-teal-tint-2:    #C5E5EC;  /* light teal badge bg    */
+  --color-red-tint-1:     #FEF0F2;  /* very light red bg      */
+  --color-navy-tint-1:    #E8EDF2;  /* very light navy bg     */
+  --color-coral-tint-1:   #FFF0EB;  /* very light coral bg    */
+
+  /* ── Typography ──────────────────────────────────────── */
+  /* Primary: Prompt (Thai + Latin headings) */
+  /* Body:    Sarabun (Thai + Latin body)    */
+  /* Fallback: system-ui, sans-serif         */
+  --font-heading:   'Prompt', system-ui, sans-serif;
+  --font-body:      'Sarabun', system-ui, sans-serif;
+  --font-mono:      'IBM Plex Mono', monospace;
+
+  /* ── Type Scale ──────────────────────────────────────── */
+  --text-xs:    0.75rem;   /*  12px */
+  --text-sm:    0.875rem;  /*  14px */
+  --text-base:  1rem;      /*  16px */
+  --text-lg:    1.125rem;  /*  18px */
+  --text-xl:    1.25rem;   /*  20px */
+  --text-2xl:   1.5rem;    /*  24px */
+  --text-3xl:   1.875rem;  /*  30px */
+  --text-4xl:   2.25rem;   /*  36px */
+  --text-5xl:   3rem;      /*  48px */
+
+  /* ── Spacing Scale ───────────────────────────────────── */
+  --space-1:    0.25rem;   /*  4px  */
+  --space-2:    0.5rem;    /*  8px  */
+  --space-3:    0.75rem;   /* 12px  */
+  --space-4:    1rem;      /* 16px  */
+  --space-5:    1.25rem;   /* 20px  */
+  --space-6:    1.5rem;    /* 24px  */
+  --space-8:    2rem;      /* 32px  */
+  --space-10:   2.5rem;    /* 40px  */
+  --space-12:   3rem;      /* 48px  */
+  --space-16:   4rem;      /* 64px  */
+  --space-20:   5rem;      /* 80px  */
+
+  /* ── Border Radius ───────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;  /* pill shape */
+
+  /* ── Shadows ─────────────────────────────────────────── */
+  --shadow-sm:  0 1px 3px rgba(28, 43, 58, 0.08);
+  --shadow-md:  0 4px 12px rgba(28, 43, 58, 0.10);
+  --shadow-lg:  0 8px 24px rgba(28, 43, 58, 0.12);
+
+  /* ── Z-index ─────────────────────────────────────────── */
+  --z-nav:      100;
+  --z-dropdown: 200;
+  --z-modal:    300;
+  --z-toast:    400;
+
+  /* ── Transitions ─────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+
+}

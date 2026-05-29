@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dive Feels — Home Page Wireframe (Lo-Fi)</title>
+  <style>
+    /* ── Reset & base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #F0F0F0;
+      color: #1a1a1a;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── Wireframe chrome ─────────────────────────── */
+    .wf-page {
+      max-width: 1280px;
+      margin: 32px auto;
+      background: #fff;
+      border: 2px solid #999;
+      box-shadow: 0 4px 20px rgba(0,0,0,.15);
+    }
+
+    /* Annotation pill */
+    .wf-label {
+      display: inline-block;
+      background: #1C2B3A;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 6px;
+    }
+    .wf-note {
+      font-size: 11px;
+      color: #E31837;
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    /* ── Blocks ───────────────────────────────────── */
+    .block {
+      border: 1.5px dashed #BBBBBB;
+      background: #F8F8F8;
+      padding: 14px 18px;
+      border-radius: 4px;
+      text-align: center;
+      color: #555;
+    }
+    .block-dark {
+      background: #CCD5DE;
+      border-color: #8899AA;
+    }
+    .block-accent {
+      background: #D6EEF2;
+      border-color: #5BA8B8;
+    }
+    .block-cta {
+      background: #F9CCCF;
+      border-color: #E31837;
+      color: #B00010;
+      font-weight: 700;
+    }
+    .block-coral {
+      background: #FFE9E0;
+      border-color: #FF9B7A;
+    }
+    .block-image {
+      background: repeating-linear-gradient(
+        45deg,
+        #ddd,
+        #ddd 5px,
+        #f0f0f0 5px,
+        #f0f0f0 10px
+      );
+      border: 1.5px dashed #aaa;
+      border-radius: 4px;
+      text-align: center;
+      color: #888;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Layout helpers ───────────────────────────── */
+    .row { display: flex; gap: 12px; }
+    .col { flex: 1; }
+    .col-2 { flex: 2; }
+    .col-3 { flex: 3; }
+
+    /* ── Sections ─────────────────────────────────── */
+    section {
+      padding: 28px 40px;
+      border-bottom: 1px solid #DDD;
+    }
+    section:last-child { border-bottom: none; }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #888;
+      border-left: 3px solid #5BA8B8;
+      padding-left: 8px;
+      margin-bottom: 16px;
+    }
+    .section-title span {
+      font-size: 9px;
+      font-weight: 400;
+      color: #AAA;
+      margin-left: 6px;
+    }
+
+    /* Spacer */
+    .gap { margin-bottom: 12px; }
+    .gap-lg { margin-bottom: 20px; }
+
+    /* ── Page title ───────────────────────────────── */
+    .doc-header {
+      background: #1C2B3A;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .doc-header h1 { font-size: 16px; font-weight: 700; }
+    .doc-header p { font-size: 11px; color: #9BB2C5; margin-top: 4px; }
+    .doc-header .badge {
+      background: #E31837; color: #fff; font-size: 10px;
+      font-weight: 700; padding: 4px 10px; border-radius: 3px;
+    }
+
+    /* ── Responsive breakpoint indicator ─────────── */
+    .bp-bar {
+      background: #2E4A6A;
+      color: #9BB2C5;
+      font-size: 10px;
+      padding: 5px 40px;
+      display: flex;
+      gap: 24px;
+    }
+    .bp-bar span { color: #5BA8B8; font-weight: 700; }
+
+    /* ── Sticky nav ───────────────────────────────── */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      background: #E8EDF2;
+      border-bottom: 2px solid #CCD5DE;
+    }
+    .nav-logo { width: 120px; height: 36px; }
+    .nav-links { display: flex; gap: 10px; }
+    .nav-link { width: 70px; height: 24px; }
+    .nav-cta { width: 120px; height: 36px; }
+    .nav-mobile-icon { display: none; width: 36px; height: 36px; }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .hero {
+      background: #CCD5DE;
+      padding: 60px 40px 50px;
+      position: relative;
+    }
+    .hero-content { max-width: 600px; }
+    .hero-badge { width: 180px; height: 24px; margin-bottom: 14px; }
+    .hero-h1 { width: 100%; height: 56px; margin-bottom: 12px; }
+    .hero-sub { width: 80%; height: 36px; margin-bottom: 24px; }
+    .hero-ctas { display: flex; gap: 12px; margin-bottom: 0; }
+    .hero-cta-primary { width: 180px; height: 48px; }
+    .hero-cta-secondary { width: 150px; height: 48px; }
+    .hero-image-overlay {
+      position: absolute;
+      right: 40px;
+      top: 40px;
+      width: 38%;
+      height: 260px;
+      border-radius: 8px;
+    }
+    .hero-trust { display: flex; gap: 20px; margin-top: 28px; }
+    .hero-trust-item { width: 140px; height: 32px; }
+
+    /* ── How it works ─────────────────────────────── */
+    .hiw-steps { display: flex; gap: 16px; }
+    .hiw-step { flex: 1; text-align: center; }
+    .hiw-icon { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 10px; }
+    .hiw-arrow {
+      display: flex; align-items: center; font-size: 24px; color: #5BA8B8;
+      padding-top: 20px;
+    }
+
+    /* ── Courses ──────────────────────────────────── */
+    .course-cards { display: flex; gap: 16px; }
+    .course-card { flex: 1; border: 1.5px dashed #AAA; border-radius: 6px; overflow: hidden; }
+    .course-card-img { height: 120px; }
+    .course-card-body { padding: 12px; }
+    .course-card-title { height: 18px; background: #ddd; border-radius: 3px; margin-bottom: 8px; }
+    .course-card-meta { height: 12px; background: #eee; border-radius: 3px; margin-bottom: 6px; }
+    .course-card-cta { height: 32px; }
+    .view-all { width: 140px; height: 40px; margin: 16px auto 0; display: block; }
+
+    /* ── Trust strip ──────────────────────────────── */
+    .trust-strip {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 40px;
+      background: #EAF5F7;
+      border-bottom: 1px solid #DDD;
+    }
+    .trust-item { text-align: center; }
+    .trust-icon { width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 6px; }
+    .trust-text { height: 14px; width: 90px; background: #CCC; border-radius: 3px; }
+
+    /* ── Destinations teaser ──────────────────────── */
+    .dest-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .dest-card { position: relative; border-radius: 6px; overflow: hidden; }
+    .dest-card-img { height: 160px; width: 100%; }
+    .dest-card-label { height: 20px; margin-top: 8px; background: #ddd; border-radius: 3px; }
+
+    /* ── Instructors ──────────────────────────────── */
+    .instructor-cards { display: flex; gap: 16px; }
+    .instr-card { flex: 1; text-align: center; }
+    .instr-photo { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 10px; }
+    .instr-name { height: 14px; background: #ddd; border-radius: 3px; margin-bottom: 6px; }
+    .instr-title { height: 12px; background: #eee; border-radius: 3px; width: 80%; margin: 0 auto; }
+
+    /* ── Reviews ──────────────────────────────────── */
+    .review-cards { display: flex; gap: 16px; }
+    .review-card {
+      flex: 1; border: 1.5px dashed #AAA; border-radius: 6px; padding: 14px;
+    }
+    .review-stars { height: 16px; background: #FFF0EB; border-radius: 3px; margin-bottom: 8px; }
+    .review-text { height: 48px; background: #F5F5F5; border-radius: 3px; margin-bottom: 8px; }
+    .review-author { height: 12px; background: #DDD; border-radius: 3px; width: 60%; }
+
+    /* ── Blog teaser ──────────────────────────────── */
+    .blog-cards { display: flex; gap: 16px; }
+    .blog-card { flex: 1; border: 1.5px dashed #AAA; border-radius: 6px; overflow: hidden; }
+    .blog-img { height: 100px; }
+    .blog-body { padding: 12px; }
+    .blog-tag { height: 16px; width: 60px; border-radius: 10px; margin-bottom: 8px; }
+    .blog-title { height: 30px; background: #DDD; border-radius: 3px; margin-bottom: 8px; }
+    .blog-meta { height: 12px; background: #EEE; border-radius: 3px; width: 70%; }
+
+    /* ── LINE CTA banner ──────────────────────────── */
+    .line-banner {
+      background: #D4F5D4;
+      border: 1.5px dashed #5BA85B;
+      border-radius: 6px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .line-copy { flex: 2; }
+    .line-title { height: 24px; background: #A8D4A8; border-radius: 3px; margin-bottom: 8px; }
+    .line-sub { height: 16px; background: #C0E4C0; border-radius: 3px; width: 80%; }
+    .line-btn { width: 160px; height: 48px; flex-shrink: 0; }
+    .line-qr { width: 80px; height: 80px; flex-shrink: 0; }
+
+    /* ── Footer ───────────────────────────────────── */
+    .footer {
+      background: #1C2B3A;
+      padding: 32px 40px;
+      color: #9BB2C5;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    .footer-col .col-title { height: 14px; background: #2E4A6A; border-radius: 3px; margin-bottom: 12px; }
+    .footer-link { height: 12px; background: #2E4A6A; border-radius: 3px; margin-bottom: 8px; }
+    .footer-bottom {
+      border-top: 1px solid #2E4A6A; padding-top: 16px; font-size: 11px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    /* ── Mobile preview ───────────────────────────── */
+    .mobile-header {
+      background: #2E4A6A;
+      color: #9BB2C5;
+      font-size: 10px;
+      padding: 4px 16px;
+      text-align: center;
+    }
+    .mobile-frame {
+      max-width: 390px;
+      margin: 0 auto;
+      border: 2px solid #999;
+      background: #fff;
+      overflow: hidden;
+    }
+    .mobile-section { padding: 20px 16px; border-bottom: 1px solid #DDD; }
+
+    /* ── Divider ──────────────────────────────────── */
+    .page-divider {
+      background: #2E4A6A;
+      color: #fff;
+      padding: 10px 40px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    /* ── Annotations panel ────────────────────────── */
+    .annotations {
+      padding: 24px 40px;
+      background: #FFFDE8;
+      border-top: 2px solid #F59E0B;
+    }
+    .annotations h3 { font-size: 12px; font-weight: 700; color: #92400E; margin-bottom: 12px; }
+    .ann-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .ann-item {
+      background: #fff;
+      border: 1px solid #F59E0B;
+      border-radius: 4px;
+      padding: 10px 14px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .ann-item h4 { font-size: 11px; font-weight: 700; color: #1C2B3A; margin-bottom: 4px; }
+    .ann-item p { font-size: 11px; color: #555; line-height: 1.5; }
+
+    /* ── Sticky nav indicator ─────────────────────── */
+    .sticky-note {
+      background: #E31837; color: #fff; font-size: 10px; font-weight: 700;
+      padding: 2px 8px; border-radius: 3px; margin-left: 8px;
+    }
+
+    /* ── Breakpoint responsive ────────────────────── */
+    @media (max-width: 900px) {
+      section { padding: 20px 16px; }
+      .hero-image-overlay { display: none; }
+      .row, .hiw-steps, .course-cards, .review-cards, .blog-cards { flex-direction: column; }
+      .dest-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-mobile-icon { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     DESKTOP WIREFRAME
+════════════════════════════════════════ -->
+
+<div class="wf-page">
+
+  <!-- Doc header -->
+  <div class="doc-header">
+    <div>
+      <h1>Dive Feels — Home Page Wireframe</h1>
+      <p>Lo-Fi · Desktop (1280px) + Mobile (390px) · Phase 3 · Task 3.7</p>
+    </div>
+    <div class="badge">LO-FI DRAFT</div>
+  </div>
+
+  <!-- Breakpoint bar -->
+  <div class="bp-bar">
+    <div>Breakpoints: <span>≥1280px</span> Desktop · <span>768–1279px</span> Tablet (col collapse) · <span>≤767px</span> Mobile (single col)</div>
+    <div>Primary: <span>Mobile-first</span></div>
+  </div>
+
+  <!-- ── 1. STICKY NAV ────────────────────────── -->
+  <section style="padding: 0;">
+    <div class="nav-bar">
+      <span class="wf-label">Nav — sticky, z:100</span>
+      <div class="row" style="align-items:center; gap: 16px;">
+        <div class="block block-dark nav-logo" style="text-align:left; padding:6px 10px; font-size:11px;">LOGO (SVG)</div>
+      </div>
+      <div class="nav-links row">
+        <div class="block nav-link" style="font-size:10px; padding:4px;">Courses</div>
+        <div class="block nav-link" style="font-size:10px; padding:4px;">Destinations</div>
+        <div class="block nav-link" style="font-size:10px; padding:4px;">Trips</div>
+        <div class="block nav-link" style="font-size:10px; padding:4px;">About</div>
+        <div class="block nav-link" style="font-size:10px; padding:4px;">Blog</div>
+      </div>
+      <div class="block block-cta nav-cta" style="font-size:11px; padding: 8px 12px;">📞 สอบถาม / LINE OA</div>
+      <div class="block nav-mobile-icon" style="font-size:18px; padding:4px;">☰</div>
+    </div>
+    <p class="wf-note" style="padding: 4px 40px 8px;">↑ Sticky on scroll. CTA = LINE OA. On mobile: hamburger menu opens a full-screen drawer.</p>
+  </section>
+
+  <!-- ── 2. HERO ───────────────────────────────── -->
+  <section class="hero">
+    <div class="section-title">HERO SECTION <span>— above fold, most critical</span></div>
+
+    <div class="hero-content">
+      <div class="block block-accent hero-badge" style="font-size:10px; padding: 4px 10px; text-align:left;">
+        🏅 SSI CERTIFIED · BANGKOK + PATTAYA
+      </div>
+      <div class="block block-dark hero-h1" style="font-size:13px; font-weight:700; text-align:left; padding: 12px;">
+        H1: เรียนดำน้ำในกรุงเทพ — จบ cert ที่พัทยา · ไม่ต้องออกเกาะ
+      </div>
+      <div class="block hero-sub" style="font-size:11px; text-align:left; padding: 8px;">
+        Sub: Learn in Bangkok evenings & weekends. Certify in Pattaya. No island trip needed.
+      </div>
+      <div class="hero-ctas">
+        <div class="block block-cta hero-cta-primary" style="padding: 12px;">🔴 ดูคอร์สทั้งหมด (CTA)</div>
+        <div class="block hero-cta-secondary" style="padding: 12px;">▶ ดูวิดีโอ</div>
+      </div>
+      <div class="hero-trust">
+        <div class="block block-accent hero-trust-item" style="font-size:10px; padding: 6px 10px;">✓ SSI Certified School</div>
+        <div class="block block-accent hero-trust-item" style="font-size:10px; padding: 6px 10px;">✓ Bangkok Pool Training</div>
+        <div class="block block-accent hero-trust-item" style="font-size:10px; padding: 6px 10px;">✓ ★★★★★ Google Reviews</div>
+      </div>
+    </div>
+
+    <!-- Hero image -->
+    <div class="block-image hero-image-overlay" style="font-size: 12px;">
+      📷 Hero Photo<br><br>
+      Underwater / diver scene<br>
+      Warm, sunlit, SSI vibe<br>
+      (1:1.2 ratio, right-aligned)
+    </div>
+
+    <p class="wf-note" style="margin-top:12px;">↑ H1 must include "กรุงเทพ" + "พัทยา" for SEO. Trust strip uses real Google star rating. Hero image: warm sunlit underwater shot.</p>
+  </section>
+
+  <!-- ── 3. HOW IT WORKS ────────────────────────── -->
+  <section>
+    <div class="section-title">HOW IT WORKS <span>— 3-step process strip (persona reassurance)</span></div>
+    <div class="block block-dark" style="font-size:12px; font-weight:700; text-align:center; padding:10px; margin-bottom:16px;">
+      Section headline: "จาก 0 ถึงนักดำน้ำ — ใช้แค่วันหยุดสุดสัปดาห์"
+    </div>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="block block-accent hiw-icon" style="line-height:56px; font-size:20px;">📚</div>
+        <div class="block" style="font-size:11px; padding:8px;">
+          <strong>Step 1 — กรุงเทพ</strong><br>
+          Theory online/in-school + Pool sessions.<br>
+          Evenings or weekends.
+        </div>
+      </div>
+      <div class="hiw-arrow">→</div>
+      <div class="hiw-step">
+        <div class="block block-accent hiw-icon" style="line-height:56px; font-size:20px;">🏊</div>
+        <div class="block" style="font-size:11px; padding:8px;">
+          <strong>Step 2 — กรุงเทพ</strong><br>
+          Confined water skills — pool.<br>
+          All gear provided.
+        </div>
+      </div>
+      <div class="hiw-arrow">→</div>
+      <div class="hiw-step">
+        <div class="block block-coral hiw-icon" style="line-height:56px; font-size:20px;">🌊</div>
+        <div class="block block-coral" style="font-size:11px; padding:8px;">
+          <strong>Step 3 — พัทยา</strong><br>
+          Open water checkout dives.<br>
+          1 weekend → SSI Certified!
+        </div>
+      </div>
+    </div>
+    <p class="wf-note">↑ This section is THE key differentiator — make it visually prominent. Icons replace stock photos. Arrow shows linear journey. Step 3 highlighted coral = finish line.</p>
+  </section>
+
+  <!-- ── 4. TRUST STRIP ──────────────────────────── -->
+  <div class="trust-strip">
+    <div class="wf-label">TRUST STRIP</div>
+    <div class="trust-item">
+      <div class="block block-accent trust-icon" style="line-height:48px;">🏅</div>
+      <div class="trust-text"></div>
+      <div style="font-size:10px; color:#555; margin-top:4px;">SSI Certified</div>
+    </div>
+    <div class="trust-item">
+      <div class="block block-accent trust-icon" style="line-height:48px;">⭐</div>
+      <div class="trust-text"></div>
+      <div style="font-size:10px; color:#555; margin-top:4px;">Google Reviews</div>
+    </div>
+    <div class="trust-item">
+      <div class="block block-accent trust-icon" style="line-height:48px;">👥</div>
+      <div class="trust-text"></div>
+      <div style="font-size:10px; color:#555; margin-top:4px;">Students Certified</div>
+    </div>
+    <div class="trust-item">
+      <div class="block block-accent trust-icon" style="line-height:48px;">📍</div>
+      <div class="trust-text"></div>
+      <div style="font-size:10px; color:#555; margin-top:4px;">Bangkok + Pattaya</div>
+    </div>
+    <div class="trust-item">
+      <div class="block block-accent trust-icon" style="line-height:48px;">🤿</div>
+      <div class="trust-text"></div>
+      <div style="font-size:10px; color:#555; margin-top:4px;">Years Teaching</div>
+    </div>
+  </div>
+
+  <!-- ── 5. FEATURED COURSES ─────────────────────── -->
+  <section>
+    <div class="section-title">FEATURED COURSES <span>— 4 cards, dynamic CMS-driven</span></div>
+    <div class="block block-dark" style="font-size:12px; font-weight:700; text-align:center; padding:10px; margin-bottom:16px;">
+      Section headline: "คอร์สของเรา — เริ่มจากไหนก็ได้"
+    </div>
+    <div class="course-cards">
+      <!-- Card 1 -->
+      <div class="course-card">
+        <div class="block-image course-card-img">📷 OW Course Photo</div>
+        <div class="course-card-body">
+          <div class="block block-accent" style="font-size:10px; height:18px; padding:2px 6px; margin-bottom:6px; text-align:left;">BEGINNER</div>
+          <div class="course-card-title"></div>
+          <div style="font-size:10px; color:#555; margin-bottom:6px;">Open Water Diver</div>
+          <div class="course-card-meta"></div>
+          <div style="font-size:10px; color:#888; margin-bottom:10px;">Bangkok pool + Pattaya OW · 3 days</div>
+          <div class="block block-cta course-card-cta" style="font-size:11px; padding:6px;">→ ดูรายละเอียด</div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="course-card">
+        <div class="block-image course-card-img">📷 AOW Course Photo</div>
+        <div class="course-card-body">
+          <div class="block block-accent" style="font-size:10px; height:18px; padding:2px 6px; margin-bottom:6px; text-align:left;">INTERMEDIATE</div>
+          <div class="course-card-title"></div>
+          <div style="font-size:10px; color:#555; margin-bottom:6px;">Advanced Open Water</div>
+          <div class="course-card-meta"></div>
+          <div style="font-size:10px; color:#888; margin-bottom:10px;">Bangkok pool + Pattaya OW · 2 days</div>
+          <div class="block block-cta course-card-cta" style="font-size:11px; padding:6px;">→ ดูรายละเอียด</div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="course-card">
+        <div class="block-image course-card-img">📷 Nitrox Course Photo</div>
+        <div class="course-card-body">
+          <div class="block" style="font-size:10px; height:18px; padding:2px 6px; margin-bottom:6px; text-align:left; background:#EEE;">SPECIALTY</div>
+          <div class="course-card-title"></div>
+          <div style="font-size:10px; color:#555; margin-bottom:6px;">Nitrox / EANx</div>
+          <div class="course-card-meta"></div>
+          <div style="font-size:10px; color:#888; margin-bottom:10px;">Bangkok (theory + pool) · 1 day</div>
+          <div class="block block-cta course-card-cta" style="font-size:11px; padding:6px;">→ ดูรายละเอียด</div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="course-card">
+        <div class="block-image course-card-img">📷 Refresher Photo</div>
+        <div class="course-card-body">
+          <div class="block block-coral" style="font-size:10px; height:18px; padding:2px 6px; margin-bottom:6px; text-align:left;">RETURNING DIVER</div>
+          <div class="course-card-title"></div>
+          <div style="font-size:10px; color:#555; margin-bottom:6px;">Scuba Review / Refresher</div>
+          <div class="course-card-meta"></div>
+          <div style="font-size:10px; color:#888; margin-bottom:10px;">Bangkok pool · Half day</div>
+          <div class="block block-cta course-card-cta" style="font-size:11px; padding:6px;">→ ดูรายละเอียด</div>
+        </div>
+      </div>
+    </div>
+    <div class="block block-dark view-all" style="font-size:11px; padding:10px;">→ ดูคอร์สทั้งหมด</div>
+    <p class="wf-note">↑ 4 cards cover all 4 personas. Card order: Beginner (P1) → Improver (P2) → Specialty (P2) → Refresher (P3). DM/Pro track = separate section or separate page. Cards are CMS-driven.</p>
+  </section>
+
+  <!-- ── 6. LINE CTA BANNER ─────────────────────── -->
+  <section style="background: #F5FFF5;">
+    <div class="section-title">CONVERSION BANNER — LINE OA <span>— sticky lead capture mid-page</span></div>
+    <div class="line-banner">
+      <div class="line-copy">
+        <div class="line-title"></div>
+        <div style="font-size:12px; font-weight:700; color:#1C2B3A; margin-bottom:6px;">
+          "สงสัยเรื่องคอร์ส? LINE หาเราได้เลย — ตอบภายใน 1 ชั่วโมง"
+        </div>
+        <div class="line-sub"></div>
+        <div style="font-size:11px; color:#555;">มีเจ้าหน้าที่ตอบทุกวัน · ไม่มีค่าใช้จ่ายในการสอบถาม</div>
+      </div>
+      <div class="block block-cta line-btn" style="font-size:11px; padding:12px; background:#00B900; border-color:#009900; color:#fff;">
+        💬 LINE OA →
+      </div>
+      <div class="block-image line-qr" style="font-size:10px; border-radius:4px;">QR Code</div>
+    </div>
+    <p class="wf-note">↑ LINE OA is primary conversion. QR code = desktop users can scan. Button text in Thai. Consider also adding Messenger button here.</p>
+  </section>
+
+  <!-- ── 7. DESTINATIONS TEASER ─────────────────── -->
+  <section>
+    <div class="section-title">DESTINATIONS TEASER <span>— inspiration only, no prices/schedules</span></div>
+    <div class="block block-dark" style="font-size:12px; font-weight:700; text-align:center; padding:10px; margin-bottom:16px;">
+      Section headline: "ดำน้ำที่ไหนดี? สถานที่น่าสำรวจ"
+    </div>
+    <div class="dest-grid">
+      <div class="dest-card">
+        <div class="block-image dest-card-img">📷 Pattaya / Koh Lan</div>
+        <div class="dest-card-label"></div>
+        <div style="font-size:11px; color:#555; margin-top:4px;">พัทยา / เกาะล้าน</div>
+      </div>
+      <div class="dest-card">
+        <div class="block-image dest-card-img">📷 Koh Chang</div>
+        <div class="dest-card-label"></div>
+        <div style="font-size:11px; color:#555; margin-top:4px;">เกาะช้าง</div>
+      </div>
+      <div class="dest-card">
+        <div class="block-image dest-card-img">📷 Similan / Andaman</div>
+        <div class="dest-card-label"></div>
+        <div style="font-size:11px; color:#555; margin-top:4px;">อันดามัน / สิมิลัน</div>
+      </div>
+    </div>
+    <div class="block block-dark view-all" style="font-size:11px; padding:10px;">→ ดูสถานที่ทั้งหมด</div>
+    <p class="wf-note">↑ No prices, no schedules. "Inspiration only" — routes click to Destinations page with narrative + photos. CTA on each destination = "สนใจทริป → LINE OA"</p>
+  </section>
+
+  <!-- ── 8. INSTRUCTOR / TEAM TEASER ─────────────── -->
+  <section>
+    <div class="section-title">INSTRUCTOR TEASER <span>— trust + face to the school</span></div>
+    <div class="block block-dark" style="font-size:12px; font-weight:700; text-align:center; padding:10px; margin-bottom:16px;">
+      Section headline: "ทีมครูผู้สอนของเรา — SSI Certified Instructors"
+    </div>
+    <div class="instructor-cards">
+      <div class="instr-card">
+        <div class="block-image instr-photo">👤 Photo</div>
+        <div class="instr-name" style="background:#DDD; height:14px; border-radius:3px; margin:0 auto 6px; width:80%;"></div>
+        <div class="instr-title" style="font-size:10px; color:#888;">SSI Instructor · X dives</div>
+      </div>
+      <div class="instr-card">
+        <div class="block-image instr-photo">👤 Photo</div>
+        <div class="instr-name" style="background:#DDD; height:14px; border-radius:3px; margin:0 auto 6px; width:80%;"></div>
+        <div class="instr-title" style="font-size:10px; color:#888;">SSI Instructor · X dives</div>
+      </div>
+      <div class="instr-card">
+        <div class="block-image instr-photo">👤 Photo</div>
+        <div class="instr-name" style="background:#DDD; height:14px; border-radius:3px; margin:0 auto 6px; width:80%;"></div>
+        <div class="instr-title" style="font-size:10px; color:#888;">SSI Divemaster · X dives</div>
+      </div>
+      <div class="instr-card">
+        <div class="block-image instr-photo">👤 Photo</div>
+        <div class="instr-name" style="background:#DDD; height:14px; border-radius:3px; margin:0 auto 6px; width:80%;"></div>
+        <div class="instr-title" style="font-size:10px; color:#888;">SSI Instructor · X dives</div>
+      </div>
+    </div>
+    <p class="wf-note">↑ Real faces build trust, especially for Thai Persona 1 (first-time diver). Each card links to instructor bio page. Keep bios warm and personal, not CV-style.</p>
+  </section>
+
+  <!-- ── 9. GOOGLE REVIEWS ───────────────────────── -->
+  <section style="background: #FFF6F0;">
+    <div class="section-title">STUDENT REVIEWS <span>— Google Reviews embed / pull from GBP</span></div>
+    <div class="block block-dark" style="font-size:12px; font-weight:700; text-align:center; padding:10px; margin-bottom:16px;">
+      Section headline: "นักเรียนบอกต่อ ⭐⭐⭐⭐⭐"
+    </div>
+    <div class="review-cards">
+      <div class="review-card">
+        <div class="review-stars" style="font-size:12px; background:none;">⭐⭐⭐⭐⭐</div>
+        <div class="review-text"></div>
+        <div class="review-author"></div>
+        <div style="font-size:10px; color:#888; margin-top:4px;">via Google</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" style="font-size:12px; background:none;">⭐⭐⭐⭐⭐</div>
+        <div class="review-text"></div>
+        <div class="review-author"></div>
+        <div style="font-size:10px; color:#888; margin-top:4px;">via Google</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" style="font-size:12px; background:none;">⭐⭐⭐⭐⭐</div>
+        <div class="review-text"></div>
+        <div class="review-author"></div>
+        <div style="font-size:10px; color:#888; margin-top:4px;">via Google</div>
+      </div>
+    </div>
+    <div class="block block-accent view-all" style="font-size:11px; padding:10px; margin-top:16px;">→ อ่านรีวิวทั้งหมดบน Google</div>
+    <p class="wf-note">↑ Must be REAL Google reviews — no fake/staged reviews. Pull via Google Business Profile API or embed widget. High conversion signal especially for Thai Persona 1.</p>
+  </section>
+
+  <!-- ── 10. BLOG TEASER ────────────────────────── -->
+  <section>
+    <div class="section-title">BLOG TEASER <span>— SEO content preview, 3 latest posts</span></div>
+    <div class="block block-dark" style="font-size:12px; font-weight:700; text-align:center; padding:10px; margin-bottom:16px;">
+      Section headline: "บทความดำน้ำ — อ่านก่อนตัดสินใจ"
+    </div>
+    <div class="blog-cards">
+      <div class="blog-card">
+        <div class="block-image blog-img">📷 Blog 1 Thumbnail</div>
+        <div class="blog-body">
+          <div class="block blog-tag" style="background: #FFE9E0; font-size:9px; padding:2px 6px; text-align:center;">Beginner</div>
+          <div class="blog-title" style="font-size:11px; color:#333; background:none; height:auto; margin:0 0 6px;">
+            "เรียนดำน้ำ กรุงเทพ — ต้องเตรียมตัวอย่างไร?"
+          </div>
+          <div class="blog-meta" style="font-size:10px; color:#888; background:none; height:auto;">May 2026 · 5 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="block-image blog-img">📷 Blog 2 Thumbnail</div>
+        <div class="blog-body">
+          <div class="block blog-tag" style="background: #D6EEF2; font-size:9px; padding:2px 6px; text-align:center;">SSI vs PADI</div>
+          <div class="blog-title" style="font-size:11px; color:#333; background:none; height:auto; margin:0 0 6px;">
+            "SSI vs PADI ต่างกันอย่างไร? เลือกอันไหนดี"
+          </div>
+          <div class="blog-meta" style="font-size:10px; color:#888; background:none; height:auto;">Apr 2026 · 7 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="block-image blog-img">📷 Blog 3 Thumbnail</div>
+        <div class="blog-body">
+          <div class="block blog-tag" style="background: #EAF5F7; font-size:9px; padding:2px 6px; text-align:center;">Refresher</div>
+          <div class="blog-title" style="font-size:11px; color:#333; background:none; height:auto; margin:0 0 6px;">
+            "กลับมาดำน้ำหลังหยุดนาน — ต้องทำอะไรบ้าง?"
+          </div>
+          <div class="blog-meta" style="font-size:10px; color:#888; background:none; height:auto;">Mar 2026 · 4 min read</div>
+        </div>
+      </div>
+    </div>
+    <div class="block block-dark view-all" style="font-size:11px; padding:10px;">→ อ่านบทความทั้งหมด</div>
+    <p class="wf-note">↑ 3 priority blog posts match P1, P2, P3 personas. SEO keywords embedded in titles. Each post has internal link to relevant course page — feeds conversion funnel.</p>
+  </section>
+
+  <!-- ── 11. FINAL CTA SECTION ──────────────────── -->
+  <section style="background: #2E4A6A; text-align:center; padding: 40px;">
+    <div class="wf-label" style="background: #5BA8B8;">FOOTER CTA SECTION</div>
+    <div class="block block-dark" style="font-size:14px; font-weight:700; padding:14px; margin: 12px auto; max-width:600px;">
+      "พร้อมจะดำน้ำครั้งแรกแล้วหรือยัง?"
+    </div>
+    <div style="display:flex; gap:16px; justify-content:center; margin-top:16px;">
+      <div class="block block-cta" style="width:200px; height:48px; font-size:12px; padding:12px;">🔴 ดูคอร์สทั้งหมด</div>
+      <div class="block" style="width:160px; height:48px; font-size:12px; padding:12px; background:#00B900; border-color:#009900; color:#fff;">💬 LINE OA</div>
+    </div>
+    <p class="wf-note" style="color: #FFB0B8; margin-top:12px;">↑ Second CTA before footer. Catches users who scrolled but didn't click above. Dark navy bg = visual contrast break.</p>
+  </section>
+
+  <!-- ── 12. FOOTER ─────────────────────────────── -->
+  <section class="footer">
+    <div class="wf-label">FOOTER</div>
+    <div class="footer-grid" style="margin-top:12px;">
+      <div class="footer-col">
+        <div class="block block-dark" style="width:100px; height:28px; margin-bottom:10px; font-size:10px; padding:5px;">LOGO</div>
+        <div style="font-size:11px; color:#9BB2C5; line-height:1.6;">
+          Dive Feels — SSI Certified<br>
+          สอนในกรุงเทพ · จบที่พัทยา<br>
+          [Address Bangkok]<br>
+          [Phone] · [Email]<br>
+          LINE OA: @divefeels
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="col-title" style="font-size:11px; font-weight:700; color:#C5D8E8; margin-bottom:8px;">คอร์ส</div>
+        <div class="footer-link"></div>
+        <div class="footer-link"></div>
+        <div class="footer-link"></div>
+        <div class="footer-link"></div>
+        <div style="font-size:10px; color:#7A9BB5;">Open Water, AOW, Nitrox, Refresher, DM…</div>
+      </div>
+      <div class="footer-col">
+        <div class="col-title" style="font-size:11px; font-weight:700; color:#C5D8E8; margin-bottom:8px;">เกี่ยวกับเรา</div>
+        <div class="footer-link"></div>
+        <div class="footer-link"></div>
+        <div class="footer-link"></div>
+        <div style="font-size:10px; color:#7A9BB5;">About, Instructors, Blog, FAQ</div>
+      </div>
+      <div class="footer-col">
+        <div class="col-title" style="font-size:11px; font-weight:700; color:#C5D8E8; margin-bottom:8px;">ติดต่อ</div>
+        <div style="font-size:10px; color:#7A9BB5; line-height:1.8;">
+          Facebook: /divefeels<br>
+          Instagram: @divefeels<br>
+          LINE OA: @divefeels<br>
+          Google Maps ↗
+        </div>
+        <div class="block block-cta" style="font-size:10px; height:28px; padding:5px; margin-top:10px; background:#00B900; border-color:#009900; color:#fff;">💬 LINE OA</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="font-size:10px; color:#7A9BB5;">© 2026 Dive Feels · Privacy Policy · Terms · Cookie Policy</div>
+      <div style="font-size:10px; color:#7A9BB5;">PDPA Compliant · SSI Affiliated</div>
+    </div>
+  </section>
+
+  <!-- ── MOBILE WIREFRAME ────────────────────────── -->
+  <div class="page-divider">📱 MOBILE VIEW — 390px (iPhone-size) — Key sections only</div>
+
+  <div style="background: #E8EDF2; padding: 32px 16px;">
+    <div class="mobile-header">Mobile — 390px · Single column · Thumb-zone CTAs</div>
+    <div class="mobile-frame">
+      <!-- Mobile Nav -->
+      <div class="mobile-section" style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px;">
+        <div class="block block-dark" style="width:80px; height:28px; font-size:9px; padding:5px;">LOGO</div>
+        <div class="block block-cta" style="width:90px; height:32px; font-size:10px; padding:6px;">LINE OA 💬</div>
+        <div class="block" style="width:32px; height:32px; font-size:14px; padding:7px;">☰</div>
+      </div>
+      <!-- Mobile Hero -->
+      <div style="background: #CCD5DE; padding: 20px 16px;">
+        <div class="block block-accent" style="font-size:9px; padding:3px 8px; margin-bottom:10px; display:inline-block;">🏅 SSI · กรุงเทพ + พัทยา</div>
+        <div class="block block-dark" style="font-size:12px; font-weight:700; padding:10px; margin-bottom:8px; text-align:left;">
+          เรียนดำน้ำในกรุงเทพ<br>จบ cert ที่พัทยา<br>ไม่ต้องออกเกาะ 🌊
+        </div>
+        <div class="block-image" style="height:180px; border-radius:6px; margin-bottom:12px;">📷 Hero Image</div>
+        <div class="block block-cta" style="width:100%; height:48px; font-size:13px; padding:13px; margin-bottom:8px;">🔴 ดูคอร์สทั้งหมด</div>
+        <div class="block" style="width:100%; height:40px; font-size:12px; padding:10px;">▶ ดูวิดีโอ</div>
+      </div>
+      <!-- Mobile How it works -->
+      <div class="mobile-section">
+        <div class="block block-dark" style="font-size:11px; font-weight:700; padding:8px; margin-bottom:12px;">จาก 0 ถึงนักดำน้ำ</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div class="block block-accent" style="font-size:11px; padding:10px; text-align:left;">① กรุงเทพ — ทฤษฎี + pool</div>
+          <div class="block block-accent" style="font-size:11px; padding:10px; text-align:left;">② กรุงเทพ — ฝึกทักษะในสระ</div>
+          <div class="block block-coral" style="font-size:11px; padding:10px; text-align:left;">③ พัทยา — checkout dives → 🎓 certified!</div>
+        </div>
+      </div>
+      <!-- Mobile Course cards (scroll horizontal) -->
+      <div class="mobile-section">
+        <div class="block block-dark" style="font-size:11px; font-weight:700; padding:8px; margin-bottom:10px;">คอร์สของเรา</div>
+        <div style="font-size:10px; color:#888; margin-bottom:8px;">← scroll horizontal →</div>
+        <div style="display:flex; gap:10px; overflow-x:auto; padding-bottom:6px;">
+          <div style="min-width:160px; border:1.5px dashed #AAA; border-radius:6px; overflow:hidden;">
+            <div class="block-image" style="height:80px;">📷</div>
+            <div style="padding:8px;">
+              <div style="font-size:10px; font-weight:700;">Open Water Diver</div>
+              <div class="block block-cta" style="height:28px; font-size:10px; padding:5px; margin-top:6px;">→ ดูรายละเอียด</div>
+            </div>
+          </div>
+          <div style="min-width:160px; border:1.5px dashed #AAA; border-radius:6px; overflow:hidden;">
+            <div class="block-image" style="height:80px;">📷</div>
+            <div style="padding:8px;">
+              <div style="font-size:10px; font-weight:700;">Advanced OW</div>
+              <div class="block block-cta" style="height:28px; font-size:10px; padding:5px; margin-top:6px;">→ ดูรายละเอียด</div>
+            </div>
+          </div>
+          <div style="min-width:160px; border:1.5px dashed #AAA; border-radius:6px; overflow:hidden;">
+            <div class="block-image" style="height:80px;">📷</div>
+            <div style="padding:8px;">
+              <div style="font-size:10px; font-weight:700;">Nitrox</div>
+              <div class="block block-cta" style="height:28px; font-size:10px; padding:5px; margin-top:6px;">→ ดูรายละเอียด</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile LINE CTA -->
+      <div class="mobile-section" style="background:#F5FFF5;">
+        <div class="block" style="font-size:11px; font-weight:700; padding:8px; background:#C0E4C0; border-color:#5BA85B; color:#1a1a1a; margin-bottom:10px;">
+          สอบถามคอร์ส — LINE ตอบภายใน 1 ชั่วโมง
+        </div>
+        <div class="block" style="width:100%; height:48px; font-size:13px; padding:13px; background:#00B900; border-color:#009900; color:#fff; font-weight:700;">
+          💬 เพิ่มเพื่อน LINE OA
+        </div>
+      </div>
+      <!-- Mobile footer strip -->
+      <div style="background:#1C2B3A; padding:16px; color:#9BB2C5; font-size:10px; text-align:center; line-height:1.8;">
+        Dive Feels · SSI Certified<br>
+        กรุงเทพ · พัทยา<br>
+        © 2026 Dive Feels
+      </div>
+    </div><!-- end mobile-frame -->
+  </div>
+
+  <!-- ── ANNOTATIONS ──────────────────────────── -->
+  <div class="annotations">
+    <h3>📋 Design Notes & Open Questions</h3>
+    <div class="ann-row">
+      <div class="ann-item">
+        <h4>Hero Messaging</h4>
+        <p>H1 must include "กรุงเทพ" and "พัทยา" for SEO. Current draft: "เรียนดำน้ำในกรุงเทพ จบ cert ที่พัทยา ไม่ต้องออกเกาะ". Confirm with owner before hi-fi.</p>
+      </div>
+      <div class="ann-item">
+        <h4>Hero Photo</h4>
+        <p>Need a strong, warm, sunlit underwater photo for the hero. Confirm if owner has this from existing students. If not, stock photo or photoshoot needed (Risk R2).</p>
+      </div>
+      <div class="ann-item">
+        <h4>Course Pricing</h4>
+        <p>Course cards show no prices in wireframe. Open question: will pricing be shown on the home page cards, or only on individual course pages? Recommend: show on course pages only.</p>
+      </div>
+      <div class="ann-item">
+        <h4>Google Business Profile</h4>
+        <p>Reviews widget requires verified GBP. This should be started NOW (dependency D2 — can take 1–2 weeks). Also critical for local SEO "คอร์สดำน้ำ กรุงเทพ" keyword.</p>
+      </div>
+      <div class="ann-item">
+        <h4>Language — TH or TH+EN?</h4>
+        <p>Wireframe uses Thai-first copy. Decision 2.6 (language strategy) must be confirmed before hi-fi. If bilingual: adds ~30–50% dev effort for proper i18n + hreflang.</p>
+      </div>
+      <div class="ann-item">
+        <h4>Divemaster / Pro Track</h4>
+        <p>Persona 4 (Future DM) not prominently featured in current home layout. Options: (a) add DM card to course grid, (b) add a separate "Pro Track" section below courses. Confirm with owner.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end wf-page -->
+
+</body>
+</html>
